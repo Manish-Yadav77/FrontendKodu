@@ -8,6 +8,7 @@ import KoduMamSir from './images/KoduMamSir.png'
 import Kodu4 from './images/Kodu4.png'
 import KoduGroup from './images/KoduGroup.png'
 import KoduGroup1 from './images/KoduGroup1.png'
+import AloneTeacher1 from './images/AloneTeacher1.png'
 
 
-export {singlTeacher,ManAlone,Dhurina,Kodu,Kodu4,KoduMam,KoduMam2,KoduMamSir,KoduGroup,KoduGroup1};
+export {singlTeacher,ManAlone,Dhurina,Kodu,Kodu4,KoduMam,KoduMam2,KoduMamSir,KoduGroup,KoduGroup1,AloneTeacher1};

@@ -6,7 +6,7 @@ import Button from "./component/Button";
 import Reviews from "./component/card/Reviews";
 import MentorCard from "./component/card/MentorCard";
 import QuestionCard from "./component/card/QuestionCard";
-import { singlTeacher, Dhurina, Kodu, Kodu4, KoduMamSir, KoduGroup, KoduGroup1 } from "./data/ImgData";
+import { singlTeacher, Dhurina, Kodu, Kodu4, KoduMamSir, KoduGroup, KoduGroup1, AloneTeacher1 } from "./data/ImgData";
 
 function App() {
   const toolsArray = [
@@ -435,7 +435,7 @@ function App() {
           {/* Image in Center */}
           <div className="w-60 h-60 flex-shrink-0">
             <img
-              src={'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/image-9.webp'}
+              src={AloneTeacher1}
               alt="Teacher"
               className="w-80 h-95 object-cover rounded-lg shadow-lg"
             />
