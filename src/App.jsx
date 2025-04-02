@@ -172,7 +172,7 @@ function App() {
       <section className="py-10 text-center">
         <h2 className="font-bold text-5xl mb-12">Learn from Experts!</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ml-5 md:ml-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ml-5 lg:ml-65 md:ml-40 ">
           {[
             { text: "Access to Recorded Classes", icon: <Video className="hover:cursor-pointer"/> },
             { text: "Expert Live Sessions", icon: <BookCheck className="hover:cursor-pointer"/> },
