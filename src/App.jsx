@@ -100,7 +100,7 @@ function App() {
     <div className="h-full w-screen bg-gray-800 text-white overflow-x-hidden">
       {/* First Section */}
       <section className="p-10 pb-0">
-        <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-20 mt-10">
+        <div className="flex flex-col lg:flex-row items-center md:gap-20 mt-10">
           {/* Left Content */}
           <div className="flex flex-col gap-6">
             {/* Logo and Featured Section */}
