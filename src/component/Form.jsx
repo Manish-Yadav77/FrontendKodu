@@ -29,7 +29,8 @@ const Form = () => {
   }
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
 
   const handleSubmit = (e) => {
@@ -42,9 +43,9 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-gradient-to-t from-gray-400 to-blue-400 p-7 rounded-2xl h-full">
+    <div className="bg-gradient-to-t from-gray-400 to-blue-400 p-7 rounded-2xl h-full mb-8 md:mb-0">
       <form
-        className="flex flex-col border-2 p-5 gap-3 bg-blue-950 w-96 text-white"
+        className="flex flex-col border-2 p-5 gap-3 bg-blue-950 w-full max-w-lg mx-auto text-white"
         onSubmit={handleSubmit}
       >
         <InputField
@@ -65,7 +66,7 @@ const Form = () => {
         {/* Mobile Number with Country Code Selection */}
         <div className="flex gap-2">
           <select
-            className="border-2 rounded-md bg-white p-2 text-gray-900 w-40"
+            className="border-2 rounded-md bg-white p-2 text-gray-900 w-1/3"
             name="countryCode"
             value={formData.countryCode}
             onChange={handleChange}
@@ -86,7 +87,7 @@ const Form = () => {
 
         {/* City Selection */}
         <InputField
-          type="text"
+          type="select"
           placeholder="Select City *"
           name="city"
           value={formData.city}
@@ -96,7 +97,7 @@ const Form = () => {
 
         {/* DM Course Willingness */}
         <InputField
-          type="text"
+          type="select"
           placeholder="Are you willing to attend the DM course at Hisar location? *"
           name="willingToAttend"
           value={formData.willingToAttend}
@@ -107,9 +108,10 @@ const Form = () => {
         {/* Captcha Section */}
         <div className="flex gap-2">
           <input
-            className="border-2 rounded-md pl-5 bg-gray-200 p-2 w-23 text-black font-bold"
+            className="border-2 rounded-md pl-5 bg-gray-200 p-2 w-1/3 text-black font-bold"
             type="text"
             value={generatedCaptcha}
+            readOnly
           />
           <InputField
             type="text"
@@ -123,13 +125,13 @@ const Form = () => {
         <div className="flex items-center gap-2 ">
           <input
             type="checkbox"
+            name="checked"
             checked={formData.checked}
             onChange={handleChange}
             className="w-5 h-5 accent-blue-600"
           />
           <p className="pt-5 text-sm sm:text-base w-full">
-            I agree to give my consent to receive updates through SMS/Email  &
-            WhatsApp*.
+            I agree to give my consent to receive updates through SMS/Email & WhatsApp*.
           </p>
         </div>
 
