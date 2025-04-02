@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import InputField from "./InputField";
 
 const Form = () => {
-  const optArray = [
-    "Hisar",
-    "Delhi",
-    "Rohtak",
-    "Chandigarh",
-    "Jaipur",
-  ];
-
+  const optArray = ["Hisar", "Delhi", "Rohtak", "Chandigarh", "Jaipur"];
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,29 +10,54 @@ const Form = () => {
     countryCode: "+91",
     city: "",
     willingToAttend: "",
-    captcha: "",
     enteredCaptcha: "",
     checked: false,
   });
-
   const [generatedCaptcha, setGeneratedCaptcha] = useState(generateCaptcha());
+  const [errors, setErrors] = useState({});
 
   function generateCaptcha() {
     return Math.random().toString(36).substring(2, 7).toUpperCase();
   }
 
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = "Name is required!";
+    if (!formData.email) newErrors.email = "Email is required!";
+    if (!formData.mobile) newErrors.mobile = "Mobile number is required!";
+    if (!formData.city) newErrors.city = "City selection is required!";
+    if (!formData.willingToAttend) newErrors.willingToAttend = "Please indicate your willingness!";
+    if (!formData.enteredCaptcha) newErrors.enteredCaptcha = "Captcha is required!";
+    if (formData.enteredCaptcha !== generatedCaptcha) newErrors.captcha = "Captcha is incorrect!";
+    return newErrors;
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
+    setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.enteredCaptcha !== generatedCaptcha) {
-      alert("Captcha is incorrect. Try again!");
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
+
     alert("Form Submitted Successfully!");
+    setFormData({
+      name: "",
+      email: "",
+      mobile: "",
+      countryCode: "+91",
+      city: "",
+      willingToAttend: "",
+      enteredCaptcha: "",
+      checked: false,
+    });
+    setGeneratedCaptcha(generateCaptcha());
   };
 
   return (
@@ -50,20 +68,20 @@ const Form = () => {
       >
         <InputField
           type="text"
-          placeholder="Enter Name *"
+          placeholder="Enter Name*"
           name="name"
           value={formData.name}
           onChange={handleChange}
+          error={errors.name}
         />
         <InputField
           type="email"
-          placeholder="Enter Email Address *"
+          placeholder="Enter Email Address*"
           name="email"
           value={formData.email}
           onChange={handleChange}
+          error={errors.email}
         />
-
-        {/* Mobile Number with Country Code Selection */}
         <div className="flex gap-2">
           <select
             className="border-2 rounded-md bg-white p-2 text-gray-900 w-1/3"
@@ -71,58 +89,56 @@ const Form = () => {
             value={formData.countryCode}
             onChange={handleChange}
           >
-            <option value="+91">🇮🇳 +91 </option>
+            <option value="+91">🇮🇳 +91</option>
             <option value="+1">🇺🇸 +1</option>
             <option value="+44">🇬🇧 +44</option>
             <option value="+61">🇦🇺 +61</option>
           </select>
           <InputField
-            type="text"
-            placeholder="Enter Mobile Number *"
+            type="number"
+            placeholder="Enter Mobile Number*"
             name="mobile"
             value={formData.mobile}
             onChange={handleChange}
+            error={errors.mobile}
           />
         </div>
-
-        {/* City Selection */}
         <InputField
           type="select"
-          placeholder="Select City *"
+          placeholder="Select City*"
           name="city"
           value={formData.city}
           onChange={handleChange}
           options={optArray}
+          error={errors.city}
         />
-
-        {/* DM Course Willingness */}
         <InputField
           type="select"
-          placeholder="Are you willing to attend the DM course at Hisar location? *"
+          placeholder="Willing to attend DM course at Hisar?*"
           name="willingToAttend"
           value={formData.willingToAttend}
           onChange={handleChange}
           options={["Yes", "No", "Maybe"]}
+          error={errors.willingToAttend}
         />
-
-        {/* Captcha Section */}
         <div className="flex gap-2">
           <input
-            className="border-2 rounded-md pl-5 bg-gray-200 p-2 w-1/3 text-black font-bold"
+            className="border-2 rounded-md pl-5 bg-gray-200 p-2 md:w-1/3 text-black font-bold w-full"
             type="text"
             value={generatedCaptcha}
             readOnly
           />
           <InputField
             type="text"
-            placeholder="Enter Text as Shown *"
+            placeholder="Enter Captcha*"
             name="enteredCaptcha"
             value={formData.enteredCaptcha}
             onChange={handleChange}
+            error={errors.enteredCaptcha}
           />
         </div>
-
-        <div className="flex items-center gap-2 ">
+        {errors.captcha && <p className="text-red-500">{errors.captcha}</p>}
+        <div className="flex items-center gap-2">
           <input
             type="checkbox"
             name="checked"
@@ -134,7 +150,6 @@ const Form = () => {
             I agree to give my consent to receive updates through SMS/Email & WhatsApp*.
           </p>
         </div>
-
         <button
           type="submit"
           className="bg-green-500 p-2 rounded-md hover:bg-green-700"
