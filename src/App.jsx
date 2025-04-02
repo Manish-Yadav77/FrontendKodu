@@ -573,7 +573,7 @@ function App() {
       {/* Twelth Section */}
       <section>
         <div className="flex flex-col items-center justify-center h-80 bg-gradient-to-r from-violet-700 to-sky-700 mt-12 rounded-2xl w-screen">
-          <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 w-6xl text-center">Special Discount 30% Off on Fees only for today if you enquire now</h2>
+          <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-280 md:ml-0  text-center">Special Discount 30% Off on Fees only for today if you enquire now</h2>
           <Button text={'Enquire Now'} className={'text-2xl mt-8 hover:cursor-pointer'} icon={<CheckCircle className="mt-1.5 " />} />
           <p className="font-semibold mt-5">Last 16 Seats Left</p>
         </div>
