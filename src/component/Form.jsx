@@ -29,13 +29,8 @@ const Form = () => {
     if (!formData.willingToAttend) newErrors.willingToAttend = "Please indicate your willingness!";
     if (!formData.enteredCaptcha) newErrors.enteredCaptcha = "Captcha is required!";
     if (formData.enteredCaptcha !== generatedCaptcha) newErrors.captcha = "Captcha is incorrect!";
+    if (formData.checked !== true) newErrors.checked = "Accept Terms and Conditions!";
     return newErrors;
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
-    setErrors({ ...errors, [name]: "" });
   };
 
   const handleSubmit = (e) => {
@@ -67,11 +62,11 @@ const Form = () => {
         onSubmit={handleSubmit}
       >
         <InputField
-          type="text"
+          type="name"
           placeholder="Enter Name*"
           name="name"
           value={formData.name}
-          onChange={handleChange}
+          onChange={(e)=>{setFormData((prev)=>({...prev,name:e.target.value}))}}
           error={errors.name}
         />
         <InputField
@@ -79,7 +74,7 @@ const Form = () => {
           placeholder="Enter Email Address*"
           name="email"
           value={formData.email}
-          onChange={handleChange}
+          onChange={(e)=>{setFormData((prev)=>({...prev,email:e.target.value}))}}
           error={errors.email}
         />
         <div className="flex gap-2">
@@ -87,7 +82,7 @@ const Form = () => {
             className="border-2 rounded-md bg-white p-2 text-gray-900 w-1/3"
             name="countryCode"
             value={formData.countryCode}
-            onChange={handleChange}
+            onChange={(e)=>{setFormData((prev)=>({...prev,countryCode:e.target.value}))}}
           >
             <option value="+91">🇮🇳 +91</option>
             <option value="+1">🇺🇸 +1</option>
@@ -99,7 +94,7 @@ const Form = () => {
             placeholder="Enter Mobile Number*"
             name="mobile"
             value={formData.mobile}
-            onChange={handleChange}
+            onChange={(e)=>{setFormData((prev)=>({...prev,mobile:e.target.value}))}}
             error={errors.mobile}
           />
         </div>
@@ -108,7 +103,7 @@ const Form = () => {
           placeholder="Select City*"
           name="city"
           value={formData.city}
-          onChange={handleChange}
+          onChange={(e)=>{setFormData((prev)=>({...prev,city:e.target.value}))}}
           options={optArray}
           error={errors.city}
         />
@@ -117,7 +112,7 @@ const Form = () => {
           placeholder="Willing to attend DM course at Hisar?*"
           name="willingToAttend"
           value={formData.willingToAttend}
-          onChange={handleChange}
+          onChange={(e)=>{setFormData((prev)=>({...prev,willingToAttend:e.target.value}))}}
           options={["Yes", "No", "Maybe"]}
           error={errors.willingToAttend}
         />
@@ -133,7 +128,7 @@ const Form = () => {
             placeholder="Enter Captcha*"
             name="enteredCaptcha"
             value={formData.enteredCaptcha}
-            onChange={handleChange}
+            onChange={(e)=>{setFormData((prev)=>({...prev,enteredCaptcha:e.target.value}))}}
             error={errors.enteredCaptcha}
           />
         </div>
@@ -143,7 +138,7 @@ const Form = () => {
             type="checkbox"
             name="checked"
             checked={formData.checked}
-            onChange={handleChange}
+            onChange={(e)=>{setFormData((prev)=>({...prev,checked:!formData.checked}))}}
             className="w-5 h-5 accent-blue-600"
           />
           <p className="pt-5 text-sm sm:text-base w-full">

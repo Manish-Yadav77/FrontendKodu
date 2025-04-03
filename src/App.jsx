@@ -9,6 +9,13 @@ import QuestionCard from "./component/card/QuestionCard";
 import { singlTeacher, Dhurina, Kodu, Kodu4, KoduMamSir, KoduGroup, KoduGroup1, AloneTeacher1 } from "./data/ImgData";
 
 function App() {
+
+  const pdfUrl = 'https://drive.google.com/file/d/1OiYkDwwWBhU5KCY699GokvSBnKEloSi1/view?usp=drivesdk';
+
+  const downloadButton = ()=>{
+    window.open(pdfUrl, '_blank');
+
+  }
   const toolsArray = [
     "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Adobe_Photoshop_CC_icon.svg.webp",
     "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/images-1.webp",
@@ -288,7 +295,7 @@ function App() {
           <Button
             className="bg-gradient-to-r from-blue-600 to-green-400 text-white py-3 px-6 rounded-lg text-2xl 
                  transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:-translate-y-1 flex flex-row gap-3 hover:cursor-pointer"
-            text="Download Brochure" icon={<Download className="mt-1" />}
+            text="Download Brochure" onClick={downloadButton} icon={<Download className="mt-1" />}
           />
         </div>
       </section>
@@ -601,7 +608,7 @@ function App() {
               <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 pt-12">Get certified with a verifiable certificates →</h2>
               <p className="font-serif ml-5 md:ml-0">We will also assist you with getting certificates from Google, Meta, Semrush, and more.</p>
               <div className="flex flex-col w-52 items-center gap-5 ml-4">
-                <Button text={'Download Brochure'} className={'bg-gradient-to-r from-violet-600 to-green-500 text-xl w-68 h-13 flex pt-3 ml-18 md:ml-0 hover:cursor-pointer'} icon={<Download className="mr-3" />} />
+                <Button text={'Download Brochure'} onClick={downloadButton} className={'bg-gradient-to-r from-violet-600 to-green-500 text-xl w-68 h-13 flex pt-3 ml-18 md:ml-0 hover:cursor-pointer'} icon={<Download className="mr-3" />} />
               </div>
             </div>
             {/* Certificate Section */}
@@ -649,7 +656,7 @@ function App() {
               </div>
             ))
           }
-          <Button text={'Download Brochure'} className={'text-xl bg-gradient-to-r from-violet-500 to-blue-600 flex flex-row gap-3 hover:cursor-pointer'} icon={<Download className="mt-0.5" />} />
+          <Button text={'Download Brochure'} onClick={downloadButton} className={'text-xl bg-gradient-to-r from-violet-500 to-blue-600 flex flex-row gap-3 hover:cursor-pointer'} icon={<Download className="mt-0.5" />} />
         </div>
       </section>
 

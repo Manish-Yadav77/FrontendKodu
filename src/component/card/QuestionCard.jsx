@@ -9,7 +9,7 @@ function QuestionCard({ title, discription }) {
   };
 
   return (
-    <div className="flex flex-col items-center bg-white w-90 mr-4 md:mr-0 md:w-260 rounded-2xl">
+    <div className="flex flex-col items-center bg-white w-90 mr-4 md:mr-0 md:w-265 rounded-2xl">
       <h4 className="text-black font-semibold md:text-2xl bg-white shadow-2xl text-center pt-3 pl-3 w-full rounded-2xl flex flex-row h-full pb-2 md:pb-0 md:h-16 gap-3 items-center justify-between px-4">
         {title}
         <button onClick={toggleDisc} className="ml-auto">
