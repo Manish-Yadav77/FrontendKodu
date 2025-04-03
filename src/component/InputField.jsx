@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputField = ({ type, placeholder, value, onChange, options, error }) => {
+const InputField = ({ type, placeholder, value, onChange, options, error,onBlur }) => {
   if (options) {
     return (
       <select
@@ -23,6 +23,7 @@ const InputField = ({ type, placeholder, value, onChange, options, error }) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      onBlur={onBlur}
     />
   );
 };

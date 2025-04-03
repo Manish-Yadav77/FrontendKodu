@@ -144,12 +144,12 @@ function App() {
             <div className="relative w-full max-w-2xl mt-5">
               <img
                 src={KoduGroup1}
-                className="md:w-350 md:h-110 md:ml-25 object-cover rounded-lg"
+                className="md:w-350 md:h-110 lg:ml-25  object-cover rounded-lg"
               />
             </div>
           </div>
           {/* Form Component */}
-          <div className="self-start w-full max-w-md">
+          <div className="self-start w-full max-w-md md:ml-20">
             <Form />
           </div>
         </div>
@@ -157,7 +157,7 @@ function App() {
 
       {/* Second Section */}
       <section className="flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-6xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 md:mt-5 lg:mt-0 lg:gap-6 w-200 lg:w-full max-w-6xl lg:ml-5 ml-5 mr-5">
           {[
             { title: "100 Days", subtitle: "Duration" },
             { title: "15+ AI Tools", subtitle: "Features" },
@@ -166,9 +166,9 @@ function App() {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-gradient-to-t from-purple-600 to-blue-600 text-center p-4 rounded-lg"
+              className="bg-gradient-to-t from-purple-600 to-blue-600 text-center p-3 lg:p-4 rounded-lg"
             >
-              <p className="font-bold text-2xl">{item.title}</p>
+              <p className="font-bold text-xl lg:text-2xl">{item.title}</p>
               <p>{item.subtitle}</p>
             </div>
           ))}
@@ -177,9 +177,9 @@ function App() {
 
       {/* Third Section */}
       <section className="py-10 text-center">
-        <h2 className="font-bold text-5xl mb-12">Learn from Experts!</h2>
+        <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-12">Learn from Experts!</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ml-5 lg:ml-65 md:ml-40 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ml-8 sm:ml-12 lg:ml-65 md:ml-10 md:mr-8 lg:mr-0 justify-center ">
           {[
             { text: "Access to Recorded Classes", icon: <Video className="hover:cursor-pointer"/> },
             { text: "Expert Live Sessions", icon: <BookCheck className="hover:cursor-pointer"/> },
@@ -200,7 +200,7 @@ function App() {
       {/* Fourth Section */}
       <section className="py-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 font-bold text-center mb-8">
+          <h2 className="text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 font-bold text-center mb-8">
             What our learners say →
           </h2>
 
@@ -249,7 +249,7 @@ function App() {
       {/* Fifth Section */}
       <section className="py-10">
         <div className="flex flex-col items-center text-center text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0">
-          <h2 className="font-bold text-5xl">
+          <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">
             Curriculum Jo Banaye Apko Skill Ready
           </h2>
           <p className="font-semibold mt-4 text-lg">
@@ -257,7 +257,7 @@ function App() {
           </p>
 
           {/* Card Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 md:gap-2 lg:gap-6 lg:max-w-6xl mx-auto mt-8">
             {[
               "WordPress Website",
               "SEO",
@@ -274,7 +274,7 @@ function App() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 mt-12">
+        <div className="flex flex-wrap justify-center gap-4 lg:gap-6 mt-12 ml-2 mr-2 lg:ml-0 lg:mr-0">
           {[
             { number: "180+", label: "Learning Hours" },
             { number: "13+", label: "Live Projects" },
@@ -303,9 +303,9 @@ function App() {
       {/* Sixth Section */}
       <section>
         <div className="flex flex-col items-center ">
-          <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 md:text-center">Join this program if you are a →</h2>
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">Join this program if you are a →</h2>
 
-          <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2 gap-7 justify-center text-center">
+          <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2  gap-7 justify-center text-center">
             {[
               {
                 title: "Student & Recent Graduate",
@@ -343,7 +343,7 @@ function App() {
       {/* Seventh Section */}
       <section>
         <div className="flex flex-col items-center mt-10 text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 ">
-          <h1 className="font-bold text-5xl mb-5 mt-5">
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-5 mt-5">
             Pleasure to Meet Few Known Faces →
           </h1>
           <div className="flex mt-8 gap-8 flex-wrap justify-center shadow-black shadow-lg">
@@ -360,7 +360,7 @@ function App() {
             <img
               src={singlTeacher}
               alt=""
-              className="h-80 w-90 rounded-2xl shadow-black shadow-2xl"
+              className="h-80 w-90 md:mb-8 lg:mb-0 rounded-2xl shadow-black shadow-2xl"
             />
           </div>
         </div>
@@ -369,7 +369,7 @@ function App() {
       {/* Eighth Section */}
       <section>
         <div className="flex flex-col items-center mt-12 ">
-          <h1 className="font-bold text-5xl ml-12 md:ml-0">Expected Outcomes →</h1>
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl ml-12 md:ml-0">Expected Outcomes →</h1>
           <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2 justify-center items-center">
             {[
               {
@@ -416,7 +416,7 @@ function App() {
       {/* Ninth Section */}
       <section className="py-10 ">
         <div className="flex justify-center">
-          <h1 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 mb-12 mt-5 md:text-center">
+          <h1 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 mb-12 mt-5 md:text-center">
             Baniye Kodu Academy Ke Sath Career-Ready →
           </h1>
         </div>
@@ -424,7 +424,7 @@ function App() {
           {/* Left Side */}
           <div className="flex flex-col items-center text-center gap-6 max-w-sm">
             <div>
-              <h4 className="text-2xl font-bold pt-8 md:pt-0">Industry-Driven Projects</h4>
+              <h4 className="text-2xl font-bold pt-8 md:pt-8 lg:pt-0">Industry-Driven Projects</h4>
               <p className="text-gray-300 mt-2 mr-8 ml-5 md:mr-0 md:ml-0">
                 Get hands-on experience through projects sponsored by industry
                 leaders for your career.
@@ -451,7 +451,7 @@ function App() {
           {/* Right Side */}
           <div className="flex flex-col items-center text-center gap-6 max-w-sm">
             <div>
-              <h4 className="text-2xl font-bold mt-19 md:mt-0">Internship Opportunities</h4>
+              <h4 className="text-2xl font-bold mt-19 md:mt-20 lg:mt-0">Internship Opportunities</h4>
               <p className="text-gray-300 mt-2 mr-8 ml-5 md:mr-0 md:ml-0">
                 Access strategic internships for career-boosting hands-on
                 experience and professional growth.
@@ -459,7 +459,7 @@ function App() {
             </div>
             <div>
               <h4 className="text-2xl font-bold">1 to 1 Career Counseling</h4>
-              <p className="text-gray-300 mt-2 mb-12 md:mb-0 mr-8 ml-5 md:mr-0 md:ml-0">
+              <p className="text-gray-300 mt-2 mb-12 md:mb-8 lg:mb-0 mr-8 ml-5 md:mr-0 md:ml-0">
                 Receive personalized career counseling sessions to identify your
                 strengths, interests, and career goals.
               </p>
@@ -469,7 +469,7 @@ function App() {
 
         <div>
           <div className="flex justify-center mt-28">
-            <h2 className="font-bold text-5xl">Our Brands →</h2>
+            <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">Our Brands →</h2>
           </div>
           <div className="flex justify-center gap-5 mt-5 animate-pulse flex-wrap">
             <img
@@ -509,10 +509,10 @@ function App() {
       {/* Tenth Section */}
       <section>
         <div className="flex flex-col items-center mt-3 justify-center ">
-          <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 md:text-center">
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">
             Internships & Placements for Your Success →
           </h2>
-          <p className="font-semibold md:w-250 mt-7 text-balance md:text-center mr-12 ml-7 md:mr-0 md:ml-0">
+          <p className="font-semibold md:w-210 lg:w-250 mt-7 text-balance md:text-center mr-12 ml-7 md:mr-0 md:ml-0">
             We go beyond education—we build careers! Our students have
             successfully secured internships and placements in top companies,
             gaining hands-on experience and industry insights. With our strong
@@ -561,16 +561,16 @@ function App() {
       {/* Eleventh Section */}
       <section>
         <div className="flex flex-col items-center mb-8 gap-5">
-          <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 mt-5 md:text-center">Master 20+ Tools →</h2>
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 mt-5 md:text-center">Master 20+ Tools →</h2>
           <p className="font-semibold mt-5 mb-5">And become a pro digital marketer </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-7 mr-5 md:mr-0 ">
             {toolsArray.map((itm, idx) => (
               <div
                 key={idx}
-                className="bg-gradient-to-r from-gray-600 to-gray-900 p-8 shadow-black shadow-lg border border-black flex justify-center items-center rounded-2xl w-45"
+                className="bg-gradient-to-r from-gray-600 to-gray-900 p-3 md:p-5 shadow-black shadow-lg border border-black flex justify-center items-center rounded-2xl md:w-30 lg:w-35 "
               >
-                <img src={itm} alt="Tools Logo" className="h-25 w-40 rounded-2xl " />
+                <img src={itm} alt="Tools Logo" className="h-15 w-20 lg:h-20 lg:w-25 rounded-2xl " />
               </div>
             ))}
           </div>
@@ -580,7 +580,7 @@ function App() {
       {/* Twelth Section */}
       <section>
         <div className="flex flex-col items-center justify-center h-80 bg-gradient-to-r from-violet-700 to-sky-700 mt-12 rounded-2xl w-screen">
-          <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-280 md:ml-0  text-center">Special Discount 30% Off on Fees only for today if you enquire now</h2>
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-180 lg:w-280 md:ml-0  text-center">Special Discount 30% Off on Fees only for today, if you enquire now</h2>
           <Button text={'Enquire Now'} className={'text-2xl mt-8 hover:cursor-pointer'} icon={<CheckCircle className="mt-1.5 " />} />
           <p className="font-semibold mt-5">Last 16 Seats Left</p>
         </div>
@@ -588,11 +588,11 @@ function App() {
 
       {/* Thirteenth Section */}
       <section>
-        <h2 className="text-center font-bold text-5xl mt-12 mb-8">What our students say!</h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-5xl mt-12 mb-8">What our students say!</h2>
+        <div className="flex flex-wrap justify-center sm:gap-1 md:gap-3 lg:gap-12 lg:mr-12">
           {
             ReviewsArray.map((itm, idx) => (
-              <div key={idx} className="w-full sm:w-1/2 lg:w-1/4">
+              <div key={idx} className="w-full sm:w-1/2 lg:w-1/4 lg:mr-8">
                 <Reviews name={itm.name} description={itm.description} img={itm.img} />
               </div>
             ))
@@ -602,7 +602,7 @@ function App() {
 
       {/* Fourteenth Section */}
       <section>
-        <div className="h-120 bg-gray-800 shadow-white shadow-[0px_-2px_5px_rgba(34,197,94,0.6)]">
+        <div className="lg:h-120 md:h-200 bg-gray-800 shadow-white shadow-[0px_-2px_5px_rgba(34,197,94,0.6)]">
           <div className="flex justify-center mt-7 pt-9 gap-8 flex-wrap">
             <div className="flex flex-col w-122 gap-5">
               <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 pt-12">Get certified with a verifiable certificates →</h2>
@@ -620,10 +620,10 @@ function App() {
 
       {/* Fifteenth Section */}
       <section>
-        <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 text-center text-slate-100 mt-70 md:mt-8">Learn from top Industry Experts →</h2>
+        <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 text-center text-slate-100 mt-70 md:mt-8">Learn from top Industry Experts →</h2>
         <div className="flex flex-col items-center mt-5">
           <h4 className="flex gap-5 text-3xl mb-5 mt-1 md:mt-3">Our <p className="text-3xl font-bold">Mentors</p></h4>
-          <div className="flex flex-wrap justify-center ml-12 md:ml-0 gap-15">
+          <div className="flex flex-wrap justify-center ml-12 md:ml-0 gap-12 lg:gap-15">
             {
               mentors.map((itm, idx) => (
                 <div key={idx} className="w-full sm:w-1/2 md:w-1/4">
@@ -633,7 +633,7 @@ function App() {
             }
           </div>
           <h4 className="flex gap-5 text-3xl mb-5 ">Our <p className="text-3xl font-bold">Trainers</p></h4>
-          <div className="flex flex-wrap justify-center gap-15 ml-12 md:ml-0">
+          <div className="flex flex-wrap justify-center gap-12 lg:gap-15 ml-12 md:ml-0">
             {
               trainers.map((itm, idx) => (
                 <div key={idx} className="w-full sm:w-1/2 md:w-1/4">
@@ -648,7 +648,7 @@ function App() {
       {/* Sixtinth Section */}
       <section>
         <div className="flex flex-col items-center mb-8 gap-5 ">
-          <h1 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 md:text-center">Frequently Asked Questions →</h1>
+          <h1 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">Frequently Asked Questions →</h1>
           {
             quesArray.map((itm, idx) => (
               <div key={idx}>
