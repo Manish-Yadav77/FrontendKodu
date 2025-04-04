@@ -2,7 +2,7 @@ import React from "react";
 
 function Reviews({ name, description, img }) {
   return (
-    <div className="max-w-md mx-auto bg-white shadow-lg shadow-black rounded-xl p-6 border border-gray-200 hover:shadow-2xl transition duration-300 mb-12 h-100 w-90 ml-3 flex flex-col justify-between min-h-[250px]">
+    <div className="max-w-md mx-auto bg-white shadow-lg shadow-black rounded-xl p-6 border border-gray-200 hover:shadow-2xl transition duration-300 mb-12 h-full w-90 ml-3 flex flex-col justify-between min-h-[250px]">
 
       <p className="text-lg italic font-semibold text-black mb-3 flex-grow">
         {description}

@@ -1,87 +1,94 @@
 import { useState } from "react";
-import { Home, Download, CheckCircle, GraduationCap, Brain, Handshake, UserCheck, DollarSign, BadgeDollarSign, Video, BookCheck, Briefcase, User, CreativeCommons, CreditCardIcon, Book, BookA, Building, UserCog, PersonStanding, PersonStandingIcon, User2 } from "lucide-react";
+import { Download, CheckCircle, GraduationCap, Handshake,  BadgeDollarSign, Video, BookCheck, Briefcase, User, BookA,  LucideHome, Code, Code2, FileCode2Icon } from "lucide-react";
 import Form from "./component/Form";
 import Card from "./component/card/Card";
 import Button from "./component/Button";
 import Reviews from "./component/card/Reviews";
 import MentorCard from "./component/card/MentorCard";
 import QuestionCard from "./component/card/QuestionCard";
-import { singlTeacher, Dhurina, Kodu, Kodu4, KoduMamSir, KoduGroup, KoduGroup1, AloneTeacher1 } from "./data/ImgData";
+import { singlTeacher, Dhurina, Kodu, Kodu4, KoduMamSir, KoduGroup, KoduGroup1, AloneTeacher1, Certificate, AlgoSeeds, ApniKitab, aryavart_Academy, delainelogo, dhurina_logo, kodu_logo, RBDpublisher, C, CPP, java, HTML, JS, React, NodeJS, MongoDB, SQL, Python, St1, St2, St3, RamSir, SeemaMam, DeepanshuSir, Placement1, Placement2, Placement3, Placement4 } from "./data/ImgData";
+import ImageSlider from "./component/ImageSlider";
+import PopupForm from "./component/PopUpForm";
 
 function App() {
 
-  const pdfUrl = 'https://drive.google.com/file/d/1OiYkDwwWBhU5KCY699GokvSBnKEloSi1/view?usp=drivesdk';
+  const [showPopup, setShowPopup] = useState(false);
 
-  const downloadButton = ()=>{
-    window.open(pdfUrl, '_blank');
+  const certificateImages = [
+    Certificate,
+  ]
 
-  }
-  const toolsArray = [
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Adobe_Photoshop_CC_icon.svg.webp",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/images-1.webp",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/images.webp",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/rank.png",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/images-1-1.webp",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/e.webp",
-    'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/images-3.png',
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/images-2.png",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/meta-icon.webp",
-    "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/174881.png",
-  ];
+  const imagesLang= [
+    C,CPP,java,HTML,JS,React,NodeJS,MongoDB,SQL,Python
+  ]
+
+  const brandImage = [
+    AlgoSeeds,ApniKitab,aryavart_Academy,delainelogo,dhurina_logo,kodu_logo,RBDpublisher,
+  ]
+
+  const PlacementImage=[
+    Placement1,
+    Placement2,
+    Placement3,
+    Placement4
+  ]
+
+  const images=[singlTeacher,Kodu4,KoduMamSir,KoduGroup];
+  
 
   const ReviewsArray = [
     {
-      name: 'Rajesh Kumar',
-      description: 'Enrolling in Digital Chaabi Academy was the best decision for my business. The strategies I learned helped me increase my revenue by 50% within just six months. My business became profitable for the first time, and I owe it all to the expert guidance and practical insights from the academy.',
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/testi-1.webp'
+      name: 'Ananya Sharma ',
+      description: '"I really loved how easy and structured the learning experience is on Kodu. The interface is clean and the content feels personalized. Super helpful for beginners like me!"',
+      img: St1
     },
     {
-      name: 'Anil Mehta',
-      description: "I was able to implement advanced digital marketing techniques that boosted my client base and significantly increased my earnings. The academy's comprehensive training not only helped me grow my business but also paved the way for continuous career growth. A game-changer for digital entrepreneurs",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/testi-3.webp'
+      name: 'Rohit Mehta ',
+      description: `"Kodu helped me understand React and backend development in such a simple way. The projects and real-time support made a big difference in my learning journey."`,
+      img: St2
     },
     {
-      name: 'Suresh Ray',
-      description: "The courses are incredibly detailed and hands-on, providing me with the tools and knowledge to effectively market my business online. I've seen a substantial increase in both traffic and sales, making my business more profitable than I ever imagined. This academy is a must for anyone serious about success",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/testi-2.webp'
+      name: 'Aditya Verma',
+      description:`"As someone who’s already done BCA, I found Kodu’s content refreshingly practical. It’s not just theory — you actually build cool stuff!"`,
+      img: St3
     },
     
   ];
 
   const mentors = [
     {
-      name: "Ankush Mehta",
-      title: "Multipreneur, Founder- Digital Chaabi Brands",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Ankush-Mehta.webp',
+      name: "Ram Mohan ",
+      title: "IIT Kanpur",
+      img: RamSir,
     },
     {
-      name: "Sunil Mehta",
-      title: "Admin, Healthcare & Influencer Marketing Practitioner",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/rohit-sir.webp',
+      name: "Seema Mam",
+      title: "Sr. coding Expert",
+      img: SeemaMam,
     },
     {
-      name: "Aryan Tiwari",
-      title: "Growth Catalyst Brand Marketer",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Harsh-sir-1.webp'
+      name: "Deepanshu ",
+      title: "CTO Delaine",
+      img: DeepanshuSir,
     }
   ];
 
   const quesArray = [
     {
-      title: 'What sets apart the Digital Marketing program in Hisar from other programs? ',
-      discription: 'The Digital Marketing program in Hisar is different because it’s all about what works right here. You’ll learn practical stuff that you can use in businesses around Hisar. Plus, you’ll actually do things, not just talk about them. It’s like learning by doing, which makes it way easier to understand and remember. So, when you finish, you’ll be ready to confidently tackle any digital marketing job.',
+      title: 'What kind of courses does Kodu offer? ',
+      discription: 'Kodu offers beginner to advanced full stack web development courses, covering both frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, MongoDB) technologies.',
     },
     {
-      title: 'How is AI technology integrated into the Digital Marketing curriculum?',
-      discription: 'In our Digital Marketing program, we show you how to use AI to make your marketing super effective. You’ll learn to understand data, know your customers better, and create ads that really work. It’s like having a super-smart helper by your side! So, when you finish, you’ll be ahead of the pack and impress everyone with your awesome skills.',
+      title: 'Do I need any prior coding experience to start?',
+      discription: "Not at all! Kodu is beginner-friendly. Whether you're completely new or want to brush up your skills after graduation, the content is easy to follow with plenty of hands-on practice.",
     },
     {
-      title: 'Is prior marketing experience necessary to enroll in the Digital Marketing program?',
-      discription: 'No, you don’t need any marketing experience to join our Digital Marketing program. We welcome beginners who are just starting, as well as those with some experience looking to level up their skills. Our program is designed to meet you where you are and help you succeed, no matter your background.',
+      title: 'Is there a certificate after course completion?',
+      discription: "Yes, upon successfully finishing a course, you'll receive a digital certificate which you can showcase on LinkedIn or your resume.",
     },
     {
-      title: 'What are the potential career paths after completing a Digital Marketing program in Hisar?',
-      discription: 'Upon completion, graduates can pursue various career paths, including direct positions such as Digital Marketing Specialist, Social Media Manager, SEO Analyst, Content Marketer, Email Marketing Manager, Paid Advertising Specialist, and Digital Marketing Strategist.',
+      title: 'Is job placement support available after completing the course?',
+      discription: "Yes, Kodu provides career guidance, resume-building tips, interview prep, and placement assistance through its network of hiring partners.",
     }
   ];
 
@@ -125,9 +132,9 @@ function App() {
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              Bano Ek <br />
-              <span className="bg-gradient-to-r from-red-500 via-blue-500 to-green-500 bg-clip-text text-transparent">Skilled Digital Marketer </span><br />
-              Sirf 100 Dino Mai
+            Become a <br />
+              <span className="bg-gradient-to-r from-red-500 via-blue-500 to-green-500 bg-clip-text text-transparent"> High-Paid Full Stack Developer – </span><br />
+               Enroll Now!
             </h1>
 
             {/* Collaboration Section */}
@@ -144,7 +151,7 @@ function App() {
             <div className="relative w-full max-w-2xl mt-5">
               <img
                 src={KoduGroup1}
-                className="md:w-350 md:h-110 lg:ml-25  object-cover rounded-lg"
+                className="md:w-350 md:h-110 lg:ml-25 sm:mb-88 md:mb-0 object-cover rounded-lg"
               />
             </div>
           </div>
@@ -159,8 +166,8 @@ function App() {
       <section className="flex justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 md:mt-5 lg:mt-0 lg:gap-6 w-200 lg:w-full max-w-6xl lg:ml-5 ml-5 mr-5">
           {[
-            { title: "100 Days", subtitle: "Duration" },
-            { title: "15+ AI Tools", subtitle: "Features" },
+            { title: "365 Days+", subtitle: "Duration" },
+            { title: "15+ Languages", subtitle: "Skills" },
             { title: "100% Placement", subtitle: "Assistance*" },
             { title: "Scholarship", subtitle: "Get up to 100% scholarship!" },
           ].map((item, index) => (
@@ -177,21 +184,24 @@ function App() {
 
       {/* Third Section */}
       <section className="py-10 text-center">
-        <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-12">Learn from Experts!</h2>
+        <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-12"> Why Choose Kodu Institute?</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ml-8 sm:ml-12 lg:ml-65 md:ml-10 md:mr-8 lg:mr-0 justify-center ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-12 gap-y-8 max-w-6xl mx-auto ml-8 sm:ml-12 lg:ml-50 md:ml-10 md:mr-8 lg:mr-0 justify-center ">
           {[
-            { text: "Access to Recorded Classes", icon: <Video className="hover:cursor-pointer"/> },
-            { text: "Expert Live Sessions", icon: <BookCheck className="hover:cursor-pointer"/> },
-            { text: "Hands-on Projects", icon: <GraduationCap className="hover:cursor-pointer"/> },
-            { text: "100% Job Placement Assistance", icon: <Briefcase className="hover:cursor-pointer"/> },
-            { text: "Industry Certifications", icon: <BookA className="hover:cursor-pointer"/> },
-            { text: "Lifetime Access", icon: <User  className="hover:cursor-pointer"/> },
+            { text: "Learn from Industry Experts & Top Trainers", icon: <Video className="hover:cursor-pointer h-full w-fit m-2"/> },
+            { text: "Work on Live Projects – Gain Real-World Experience", icon: <BookCheck className="hover:cursor-pointer h-full w-fit m-2"/> },
+            { text: "Job Assistance & Interview Preparation", icon: <GraduationCap className="h-full w-fit m-2 hover:cursor-pointer"/> },
+            { text: "Fully AC & WiFi-Enabled Classrooms + Free Lab Access", icon: <Briefcase className="hover:cursor-pointer h-full w-fit m-2"/> },
+            { text: "Personality Development (PD) Sessions to Boost Confidence", icon: <BookA className="hover:cursor-pointer h-full w-fit m-2"/> },
+            { text: "Industry Certificates", icon: <User  className="hover:cursor-pointer h-full w-fit m-2"/> },
+            { text: "3months Internship  from Practical Learnings", icon: <Briefcase  className="hover:cursor-pointer h-full w-fit m-2"/> },
+            { text: "100% Placement Guidance by Seniors ", icon: <BookCheck  className="h-full w-fit m-2 hover:cursor-pointer"/> },
+            { text: "Weekly Practice Test  for Evaluation ", icon: <GraduationCap  className="h-full w-fit m-2 hover:cursor-pointer"/> },
           ].map((itm, index) => (
-            <div key={index} className="flex items-center gap-3">
+            <div key={index} className="flex items-center gap-3  ml-5">
               {/* Icon Placeholder */}
               <span className="h-10 w-10 bg-blue-500 rounded-full flex items-center justify-center">{itm.icon}</span>
-              <p className="font-bold text-xl">{itm.text}</p>
+              <p className="font-bold lg:text-lg pt-5 mr-5">{itm.text}</p>
             </div>
           ))}
         </div>
@@ -259,24 +269,25 @@ function App() {
           {/* Card Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 md:gap-2 lg:gap-6 lg:max-w-6xl mx-auto mt-8">
             {[
-              "WordPress Website",
-              "SEO",
-              "Content and Copywriting",
-              "Shopify and E-Commerce",
-              "Google Ads",
-              "Meta Ads",
-              "Influencer Marketing",
-              "Communication Skills",
-              "AI Integration",
+              "Full Stack Development",
+              "Mern Stack Development",
+              "Introduction to Coding",
+              "WordPress Development",
+              "Data Structures & Algorithms (DSA)",
+              "Become a Chat GPT Pro",
+              "Python",
+              "Java",
+              "Mobile App Development",
             ].map((itm, idx) => (
-              <Card key={idx} title={itm} buttonText={"Read More"} />
+              <Card key={idx} title={itm} buttonText={"Read More"} onClick={() => setShowPopup(true)} />
             ))}
           </div>
         </div>
+        
 
         <div className="flex flex-wrap justify-center gap-4 lg:gap-6 mt-12 ml-2 mr-2 lg:ml-0 lg:mr-0">
           {[
-            { number: "180+", label: "Learning Hours" },
+            { number: " 8,760+", label: "Learning Hours" },
             { number: "13+", label: "Live Projects" },
             { number: "3", label: "Months Internship" },
           ].map((itm, idx) => (
@@ -289,14 +300,8 @@ function App() {
             </div>
           ))}
         </div>
-
-        {/* Download Brochure Button */}
         <div className="flex justify-center mt-10">
-          <Button
-            className="bg-gradient-to-r from-blue-600 to-green-400 text-white py-3 px-6 rounded-lg text-2xl 
-                 transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:-translate-y-1 flex flex-row gap-3 hover:cursor-pointer"
-            text="Download Brochure" onClick={downloadButton} icon={<Download className="mt-1" />}
-          />
+          
         </div>
       </section>
 
@@ -310,26 +315,26 @@ function App() {
               {
                 title: "Student & Recent Graduate",
                 description:
-                  "Grab Your 1st Job with the help of our AI-powered marketing course and kickstart your career now",
+                  "Grab Your 1st Job with the help of our trainers  and kickstart your career now",
                 icons: <GraduationCap className="mt-1" />,
-              },
-              {
-                title: "Marketing Enthusiast",
-                description:
-                  "Level up your skills and master advanced marketing strategies with our practical skill-based course",
-                icons: <Brain className="mt-1" />,
               },
               {
                 title: "Entrepreneur",
                 description:
-                  "Don’t wait anymore, grow your business success with practical insights and actionable strategies.",
+                  "Don’t wait anymore, grow your business success with practical insights and actionable strategies to make your own wesbites.",
                 icons: <Handshake className="mt-1" />,
               },
               {
                 title: "Freelancer",
                 description:
-                  "Maximize your freelancing revenue with our specialized strategies and expert guidance.",
+                  "Maximize your freelancing revenue with our specialized strategies and expert guidance to upscale your tech - knowledge",
                 icons: <BadgeDollarSign className="mt-1" />,
+              },
+              {
+                title: "Homemaker",
+                description:
+                  " Transform your passion into profit with our proven record and hacks to achieve the success in coding world…",
+                icons: <LucideHome className="mt-1" />,
               },
             ].map((itm, idx) => (
               <div key={idx} className="">
@@ -344,74 +349,17 @@ function App() {
       <section>
         <div className="flex flex-col items-center mt-10 text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 ">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-5 mt-5">
-            Pleasure to Meet Few Known Faces →
+          Experience Se Seekho, Sirf Theory Se Nahi!  →
           </h1>
-          <div className="flex mt-8 gap-8 flex-wrap justify-center shadow-black shadow-lg">
-            <img
-              src={Kodu4}
-              alt=""
-              className="h-80 w-90 rounded-2xl shadow-black shadow-2xl"
-            />
-            <img
-              src={KoduMamSir}
-              alt=""
-              className="h-80 w-80 rounded-2xl shadow-black shadow-2xl"
-            />
-            <img
-              src={singlTeacher}
-              alt=""
-              className="h-80 w-90 md:mb-8 lg:mb-0 rounded-2xl shadow-black shadow-2xl"
-            />
-          </div>
+           <div className="flex mt-8 gap-8 pb-5 w-3xl md:w-full flex-wrap justify-center shadow-gray-700 shadow-lg md:mr-6 pl-3 m-5 pt-3 pr-5 ">
+
+          <ImageSlider images={images} />
+          </div> 
         </div>
       </section>
 
       {/* Eighth Section */}
-      <section>
-        <div className="flex flex-col items-center mt-12 ">
-          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl ml-12 md:ml-0">Expected Outcomes →</h1>
-          <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2 justify-center items-center">
-            {[
-              {
-                title: "State Your Own Business",
-                description:
-                  "Have the freedom to make decisions, set your direction, and start a business that is your dream and inspires you most.",
-                  icon:<Building />
-              },
-              {
-                title: "Get Your First Job",
-                description:
-                  "With 100% Job Placement Assistance, you’re not just preparing for a job but opening your door for endless career opportunities.",
-                  icon:<UserCog />
-
-              },
-              {
-                title: "Be A Transformed Personality",
-                description:
-                  "Transform Your Personality and become corporate-ready. We focus on training you with essential soft skills and interview-cracking hacks.",
-                  icon:<Brain />
-
-              },
-              {
-                title: "Start Your Career as an Influencer",
-                description:
-                  "Become a famous face and learn how to create engaging content that helps you build an audience and personal brand.",
-                  icon:<User2 />
-
-              },
-            ].map((itm, idx) => (
-              <div key={idx}>
-                <Card
-                  title={itm.title}
-                  icon={itm.icon}
-                  description={itm.description}
-                  className={"hover:border-1"}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Ninth Section */}
       <section className="py-10 ">
@@ -471,37 +419,10 @@ function App() {
           <div className="flex justify-center mt-28">
             <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">Our Brands →</h2>
           </div>
-          <div className="flex justify-center gap-5 mt-5 animate-pulse flex-wrap">
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-55.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-57.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-52.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-51.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-53.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-54.png"
-              alt=""
-              className="h-25 w-50"
-            />
+          <div className="flex justify-center gap-7 mt-5 animate-pulse flex-wrap">
+            
+
+            <ImageSlider images={brandImage} className={"h-35 w-50 m-7 shadow-black shadow-lg p-6"}/>
           </div>
         </div>
       </section>
@@ -523,37 +444,9 @@ function App() {
         </div>
 
         <div>
-          <div className="flex justify-center gap-5 mt-15 animate-pulse flex-wrap">
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-55.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-57.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-52.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-51.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-53.png"
-              alt=""
-              className="h-25 w-50"
-            />
-            <img
-              src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-54.png"
-              alt=""
-              className="h-25 w-50"
-            />
+          <div className="flex justify-center gap-5 mt-15 flex-wrap">
+
+            <ImageSlider images={PlacementImage} className={'md:h-85 md:w-120 h-35 w-50 m-7 shadow-black shadow-lg p-6'}/>
           </div>
         </div>
       </section>
@@ -561,16 +454,16 @@ function App() {
       {/* Eleventh Section */}
       <section>
         <div className="flex flex-col items-center mb-8 gap-5">
-          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 mt-5 md:text-center">Master 20+ Tools →</h2>
-          <p className="font-semibold mt-5 mb-5">And become a pro digital marketer </p>
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 mt-5 md:text-center">Master 20+ Languages →</h2>
+          <p className="font-semibold mt-5 mb-5">And become a pro Coder... </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-7 mr-5 md:mr-0 ">
-            {toolsArray.map((itm, idx) => (
+            {imagesLang.map((itm, idx) => (
               <div
                 key={idx}
-                className="bg-gradient-to-r from-gray-600 to-gray-900 p-3 md:p-5 shadow-black shadow-lg border border-black flex justify-center items-center rounded-2xl md:w-30 lg:w-35 "
+                className="bg-gradient-to-r from-gray-600 to-gray-900  shadow-black shadow-lg border border-black flex justify-center items-center rounded-2xl md:w-30 lg:w-35 "
               >
-                <img src={itm} alt="Tools Logo" className="h-15 w-20 lg:h-20 lg:w-25 rounded-2xl " />
+                <img src={itm} alt="Tools Logo" className="h-15 w-20 lg:h-25 -p-2 lg:w-25 rounded-2xl " />
               </div>
             ))}
           </div>
@@ -580,7 +473,8 @@ function App() {
       {/* Twelth Section */}
       <section>
         <div className="flex flex-col items-center justify-center h-80 bg-gradient-to-r from-violet-700 to-sky-700 mt-12 rounded-2xl w-screen">
-          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-180 lg:w-280 md:ml-0  text-center">Special Discount 30% Off on Fees only for today, if you enquire now</h2>
+          <h2 className="font-serif text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-180 lg:w-280 md:ml-0  text-center">Join Kodu Institute & Land Your Dream Tech Job!
+           <p className='mt-3 font-serif'>Register Today!</p></h2>
           <Button text={'Enquire Now'} className={'text-2xl mt-8 hover:cursor-pointer'} icon={<CheckCircle className="mt-1.5 " />} />
           <p className="font-semibold mt-5">Last 16 Seats Left</p>
         </div>
@@ -588,7 +482,7 @@ function App() {
 
       {/* Thirteenth Section */}
       <section>
-        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-5xl mt-12 mb-8">What our students say!</h2>
+        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-5xl mt-12 mb-8">Jo Seekh Chuke Hain, Unhi Se Suno!</h2>
         <div className="flex flex-wrap justify-center sm:gap-1 md:gap-3 lg:gap-12 lg:mr-12">
           {
             ReviewsArray.map((itm, idx) => (
@@ -602,18 +496,19 @@ function App() {
 
       {/* Fourteenth Section */}
       <section>
-        <div className="lg:h-120 md:h-200 bg-gray-800 shadow-white shadow-[0px_-2px_5px_rgba(34,197,94,0.6)]">
+        <div className="lg:max-h-fit xl:h-110 h-170 md:h-200 bg-gray-800 shadow-white shadow-[0px_-2px_5px_rgba(34,197,94,0.6)]">
           <div className="flex justify-center mt-7 pt-9 gap-8 flex-wrap">
-            <div className="flex flex-col w-122 gap-5">
+            <div className="flex flex-col w-122 gap-5 ">
               <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 pt-12">Get certified with a verifiable certificates →</h2>
               <p className="font-serif ml-5 md:ml-0">We will also assist you with getting certificates from Google, Meta, Semrush, and more.</p>
               <div className="flex flex-col w-52 items-center gap-5 ml-4">
-                <Button text={'Download Brochure'} onClick={downloadButton} className={'bg-gradient-to-r from-violet-600 to-green-500 text-xl w-68 h-13 flex pt-3 ml-18 md:ml-0 hover:cursor-pointer'} icon={<Download className="mr-3" />} />
+                <Button text={'Download Brochure'} onClick={() => setShowPopup(true)} className={'bg-gradient-to-r from-violet-600 to-green-500 text-xl w-68 h-13 flex pt-3 lg:mb-12 ml-18 md:ml-0 hover:cursor-pointer '} icon={<Download className="mr-3" />} />
+                <PopupForm isOpen={showPopup} onClose={() => setShowPopup(false)} />
               </div>
             </div>
-            {/* Certificate Section */}
-            <img src="https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Untitled-design-63-1.webp" alt="Certificate"
-              className="h-90 w-130 shadow-black shadow-2xl " />
+            <div className="h-50 w-150">
+              <ImageSlider images={certificateImages} className={"h-70 w-90 md:h-90 md:w-130 shadow-black shadow-2xl "}/>
+            </div>
           </div>
         </div>
       </section>
@@ -626,16 +521,6 @@ function App() {
           <div className="flex flex-wrap justify-center ml-12 md:ml-0 gap-12 lg:gap-15">
             {
               mentors.map((itm, idx) => (
-                <div key={idx} className="w-full sm:w-1/2 md:w-1/4">
-                  <MentorCard name={itm.name} title={itm.title} img={itm.img} />
-                </div>
-              ))
-            }
-          </div>
-          <h4 className="flex gap-5 text-3xl mb-5 ">Our <p className="text-3xl font-bold">Trainers</p></h4>
-          <div className="flex flex-wrap justify-center gap-12 lg:gap-15 ml-12 md:ml-0">
-            {
-              trainers.map((itm, idx) => (
                 <div key={idx} className="w-full sm:w-1/2 md:w-1/4">
                   <MentorCard name={itm.name} title={itm.title} img={itm.img} />
                 </div>
@@ -656,7 +541,7 @@ function App() {
               </div>
             ))
           }
-          <Button text={'Download Brochure'} onClick={downloadButton} className={'text-xl bg-gradient-to-r from-violet-500 to-blue-600 flex flex-row gap-3 hover:cursor-pointer'} icon={<Download className="mt-0.5" />} />
+          <Button text={'Download Brochure'} onClick={() => setShowPopup(true)} className={'text-xl bg-gradient-to-r from-violet-500 to-blue-600 flex flex-row gap-3 hover:cursor-pointer'} icon={<Download className="mt-0.5" />} />
         </div>
       </section>
 

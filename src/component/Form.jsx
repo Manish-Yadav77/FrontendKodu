@@ -60,7 +60,7 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-gradient-to-t from-gray-400 to-blue-400 p-7 rounded-2xl h-full mb-8 md:mb-0 -mt-20">
+    <div className="bg-gradient-to-t from-gray-400 to-blue-400 p-7 rounded-2xl h-full mb-8 md:mb-0 md:mt-0 ">
       <form
         className="flex flex-col border-2 p-5 gap-3 bg-blue-950 w-full max-w-lg mx-auto text-white"
         onSubmit={handleSubmit}
@@ -138,7 +138,7 @@ const Form = () => {
         />
         <InputField
           type="select"
-          placeholder="Willing to attend DM course at Hisar?*"
+          placeholder="Willing to attend Free course at Hisar?*"
           name="willingToAttend"
           value={formData.willingToAttend}
           onChange={(e) => {

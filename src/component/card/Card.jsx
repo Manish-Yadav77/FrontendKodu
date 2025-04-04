@@ -1,6 +1,6 @@
 import Button from "../Button";
 
-const Card = ({ title, description, buttonText, className, icon }) => {
+const Card = ({ title, description, buttonText, className, icon, onClick }) => {
     return (
       <div className={buttonText ? 
         `bg-white shadow-lg rounded-lg pt-5 pb-5 md:p-6 w-72 md:w-60 lg:w-80 flex flex-col justify-between h-35 md:h-40 lg:h-40 mt-12` : 
@@ -30,7 +30,7 @@ const Card = ({ title, description, buttonText, className, icon }) => {
         {
           buttonText && 
           <div className="flex justify-center">
-            <Button className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-xl md:text-2xl" text={buttonText}/>
+            <Button className="bg-gradient-to-r from-blue-600 to-green-600 text-white py-2 px-4 rounded-lg hover:bg-blue-600 text-xl md:text-2xl" text={buttonText} onClick={onClick}/>
           </div>
         }
       </div>
