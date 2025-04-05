@@ -16,9 +16,11 @@ import {
   FileCode2Icon,
 } from "lucide-react";
 import Form from "./component/Form";
+import PopupForm from "./component/PopupForm";
 import Card from "./component/card/Card";
 import Button from "./component/Button";
 import Reviews from "./component/card/Reviews";
+import ImageSlider from "./component/ImageSlider";
 import MentorCard from "./component/card/MentorCard";
 import QuestionCard from "./component/card/QuestionCard";
 import {
@@ -59,8 +61,6 @@ import {
   Placement3,
   Placement4,
 } from "./data/ImgData";
-import ImageSlider from "./component/ImageSlider";
-import PopupForm from "./component/PopUpForm";
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -151,24 +151,6 @@ function App() {
       title: "Is job placement support available after completing the course?",
       discription:
         "Yes, Kodu provides career guidance, resume-building tips, interview prep, and placement assistance through its network of hiring partners.",
-    },
-  ];
-
-  const trainers = [
-    {
-      name: "Shushmita goyal",
-      title: "Multipreneur, Founder - Digital Chaabi Brands",
-      img: "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/a.webp",
-    },
-    {
-      name: "Tammana Rathi",
-      title: "Admin, Healthcare & Influencer Marketing Practitioner",
-      img: "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/renu-300x300-1.webp",
-    },
-    {
-      name: "Rahul Jhangra",
-      title: "Growth Catalyst Brand Marketer",
-      img: "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Monu-Saharan-SEO-1-1.webp",
     },
   ];
 
