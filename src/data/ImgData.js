@@ -38,9 +38,12 @@ import Placement2 from './images/Placement2.png'
 import Placement3 from './images/Placement3.png'
 import Placement4 from './images/Placement4.png'
 import KoduGroup2 from './images/KoduGroup2.png'
+import Placement5 from './images/Placement5.png'
+import Placement6 from './images/Placement6.png'
+import Placement7 from './images/Placement7.png'
 import Group1 from './images/Group1.png'
 
 
 
-export {singlTeacher,ManAlone,Dhurina,Kodu,Kodu4,KoduMam,KoduMam2,KoduMamSir,KoduGroup,KoduGroup1,AloneTeacher1,Certificate,AlgoSeeds,ApniKitab,aryavart_Academy,delainelogo,dhurina_logo,kodu_logo,RBDpublisher,C,CPP,java,HTML,React,JS,NodeJS,MongoDB,Python,SQL,St1,St2,St3,RamSir,SeemaMam,DeepanshuSir,Placement1,Placement2,Placement3,Placement4,KoduGroup2,Group1
+export {singlTeacher,ManAlone,Dhurina,Kodu,Kodu4,KoduMam,KoduMam2,KoduMamSir,KoduGroup,KoduGroup1,AloneTeacher1,Certificate,AlgoSeeds,ApniKitab,aryavart_Academy,delainelogo,dhurina_logo,kodu_logo,RBDpublisher,C,CPP,java,HTML,React,JS,NodeJS,MongoDB,Python,SQL,St1,St2,St3,RamSir,SeemaMam,DeepanshuSir,Placement1,Placement2,Placement3,Placement4,KoduGroup2,Group1,Placement5,Placement6,Placement7
 };

@@ -13,7 +13,7 @@ const PopupForm = ({ isOpen, onClose }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-    const pdfUrl = 'https://drive.google.com/file/d/1OiYkDwwWBhU5KCY699GokvSBnKEloSi1/view?usp=drivesdk';
+    const pdfUrl = 'https://drive.google.com/file/d/1RC03Qkv2_cTAdXsGvBAz7QiO6jQX_ec2/view?usp=drivesdk';
 
     useEffect(() => {
       if (isOpen) {

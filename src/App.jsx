@@ -70,6 +70,10 @@ import {
   Placement4,
   KoduGroup2,
   Group1,
+  KoduMam2,
+  Placement5,
+  Placement6,
+  Placement7,
 } from "./data/ImgData";
 
 function App() {
@@ -100,24 +104,24 @@ function App() {
     RBDpublisher,
   ];
 
-  const PlacementImage = [Placement1, Placement2, Placement3, Placement2];
+  const PlacementImage = [Placement7, Placement5, Placement3, Placement6];
 
   const images = [singlTeacher, Kodu4, KoduMamSir, KoduGroup];
 
   const ReviewsArray = [
     {
-      name: "Ananya Sharma ",
+      name: "Bhanu pahal ",
       description:
         '"I really loved how easy and structured the learning experience is on Kodu. The interface is clean and the content feels personalized. Super helpful for beginners like me!"',
       img: St1,
     },
     {
-      name: "Rohit Mehta ",
+      name: "Piyush Mehta",
       description: `"Kodu helped me understand React and backend development in such a simple way. The projects and real-time support made a big difference in my learning journey."`,
       img: St2,
     },
     {
-      name: "Aditya Verma",
+      name: "Jaswant",
       description: `"As someone who’s already done BCA, I found Kodu’s content refreshingly practical. It’s not just theory — you actually build cool stuff!"`,
       img: St3,
     },
@@ -205,9 +209,6 @@ function App() {
     </div>
   </div>
 </section>
-
-
-
 
       {/* Second Section */}
       <section className="flex justify-center bg-[#2d3748] text-white py-6">
@@ -440,7 +441,7 @@ function App() {
     {/* Image Center - Fixed */}
     <div className="w-72 h-auto lg:w-80 flex-shrink-0">
       <img
-        src={AloneTeacher1}
+        src={KoduMam2}
         alt="Mentor"
         className="w-full h-auto rounded-xl shadow-2xl"
       />
@@ -472,7 +473,7 @@ function App() {
   <div className="w-full overflow-hidden">
     <ImageSlider
       images={brandImage}
-      className="h-28 w-40 sm:h-32 sm:w-44 md:h-36 md:w-48 lg:h-40 lg:w-52 object-contain rounded-xl shadow-lg mx-4"
+      className="h-28 w-40 sm:h-32 sm:w-44 md:h-36 md:w-48 lg:h-30 lg:w-42 object-contain rounded-xl shadow-lg mx-8"
     />
   </div>
 </div>
