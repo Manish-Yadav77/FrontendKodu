@@ -81,6 +81,12 @@ function App() {
 
   const certificateImages = [Certificate];
 
+  const pdfUrl = 'https://drive.google.com/file/d/1RC03Qkv2_cTAdXsGvBAz7QiO6jQX_ec2/view?usp=drivesdk';
+
+  const handleWeb=() =>{
+    window.open(pdfUrl, _blank) 
+  }
+ 
   const imagesLang = [
     C,
     CPP,
