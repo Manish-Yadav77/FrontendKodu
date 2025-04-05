@@ -1,58 +1,116 @@
 import { useState } from "react";
-import { Download, CheckCircle, GraduationCap, Handshake,  BadgeDollarSign, Video, BookCheck, Briefcase, User, BookA,  LucideHome, Code, Code2, FileCode2Icon } from "lucide-react";
+import {
+  Download,
+  CheckCircle,
+  GraduationCap,
+  Handshake,
+  BadgeDollarSign,
+  Video,
+  BookCheck,
+  Briefcase,
+  User,
+  BookA,
+  LucideHome,
+  Code,
+  Code2,
+  FileCode2Icon,
+} from "lucide-react";
 import Form from "./component/Form";
 import Card from "./component/card/Card";
 import Button from "./component/Button";
 import Reviews from "./component/card/Reviews";
 import MentorCard from "./component/card/MentorCard";
 import QuestionCard from "./component/card/QuestionCard";
-import { singlTeacher, Dhurina, Kodu, Kodu4, KoduMamSir, KoduGroup, KoduGroup1, AloneTeacher1, Certificate, AlgoSeeds, ApniKitab, aryavart_Academy, delainelogo, dhurina_logo, kodu_logo, RBDpublisher, C, CPP, java, HTML, JS, React, NodeJS, MongoDB, SQL, Python, St1, St2, St3, RamSir, SeemaMam, DeepanshuSir, Placement1, Placement2, Placement3, Placement4 } from "./data/ImgData";
+import {
+  singlTeacher,
+  Dhurina,
+  Kodu,
+  Kodu4,
+  KoduMamSir,
+  KoduGroup,
+  KoduGroup1,
+  AloneTeacher1,
+  Certificate,
+  AlgoSeeds,
+  ApniKitab,
+  aryavart_Academy,
+  delainelogo,
+  dhurina_logo,
+  kodu_logo,
+  RBDpublisher,
+  C,
+  CPP,
+  java,
+  HTML,
+  JS,
+  React,
+  NodeJS,
+  MongoDB,
+  SQL,
+  Python,
+  St1,
+  St2,
+  St3,
+  RamSir,
+  SeemaMam,
+  DeepanshuSir,
+  Placement1,
+  Placement2,
+  Placement3,
+  Placement4,
+} from "./data/ImgData";
 import ImageSlider from "./component/ImageSlider";
 import PopupForm from "./component/PopUpForm";
 
 function App() {
-
   const [showPopup, setShowPopup] = useState(false);
 
-  const certificateImages = [
-    Certificate,
-  ]
+  const certificateImages = [Certificate];
 
-  const imagesLang= [
-    C,CPP,java,HTML,JS,React,NodeJS,MongoDB,SQL,Python
-  ]
+  const imagesLang = [
+    C,
+    CPP,
+    java,
+    HTML,
+    JS,
+    React,
+    NodeJS,
+    MongoDB,
+    SQL,
+    Python,
+  ];
 
   const brandImage = [
-    AlgoSeeds,ApniKitab,aryavart_Academy,delainelogo,dhurina_logo,kodu_logo,RBDpublisher,
-  ]
+    AlgoSeeds,
+    ApniKitab,
+    aryavart_Academy,
+    delainelogo,
+    dhurina_logo,
+    kodu_logo,
+    RBDpublisher,
+  ];
 
-  const PlacementImage=[
-    Placement1,
-    Placement2,
-    Placement3,
-    Placement4
-  ]
+  const PlacementImage = [Placement1, Placement2, Placement3, Placement4];
 
-  const images=[singlTeacher,Kodu4,KoduMamSir,KoduGroup];
-  
+  const images = [singlTeacher, Kodu4, KoduMamSir, KoduGroup];
 
   const ReviewsArray = [
     {
-      name: 'Ananya Sharma ',
-      description: '"I really loved how easy and structured the learning experience is on Kodu. The interface is clean and the content feels personalized. Super helpful for beginners like me!"',
-      img: St1
+      name: "Ananya Sharma ",
+      description:
+        '"I really loved how easy and structured the learning experience is on Kodu. The interface is clean and the content feels personalized. Super helpful for beginners like me!"',
+      img: St1,
     },
     {
-      name: 'Rohit Mehta ',
+      name: "Rohit Mehta ",
       description: `"Kodu helped me understand React and backend development in such a simple way. The projects and real-time support made a big difference in my learning journey."`,
-      img: St2
+      img: St2,
     },
     {
-      name: 'Aditya Verma',
-      description:`"As someone who’s already done BCA, I found Kodu’s content refreshingly practical. It’s not just theory — you actually build cool stuff!"`,
-      img: St3
+      name: "Aditya Verma",
+      description: `"As someone who’s already done BCA, I found Kodu’s content refreshingly practical. It’s not just theory — you actually build cool stuff!"`,
+      img: St3,
     },
-    
   ];
 
   const mentors = [
@@ -70,43 +128,47 @@ function App() {
       name: "Deepanshu ",
       title: "CTO Delaine",
       img: DeepanshuSir,
-    }
+    },
   ];
 
   const quesArray = [
     {
-      title: 'What kind of courses does Kodu offer? ',
-      discription: 'Kodu offers beginner to advanced full stack web development courses, covering both frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, MongoDB) technologies.',
+      title: "What kind of courses does Kodu offer? ",
+      discription:
+        "Kodu offers beginner to advanced full stack web development courses, covering both frontend (HTML, CSS, JavaScript, React) and backend (Node.js, Express, MongoDB) technologies.",
     },
     {
-      title: 'Do I need any prior coding experience to start?',
-      discription: "Not at all! Kodu is beginner-friendly. Whether you're completely new or want to brush up your skills after graduation, the content is easy to follow with plenty of hands-on practice.",
+      title: "Do I need any prior coding experience to start?",
+      discription:
+        "Not at all! Kodu is beginner-friendly. Whether you're completely new or want to brush up your skills after graduation, the content is easy to follow with plenty of hands-on practice.",
     },
     {
-      title: 'Is there a certificate after course completion?',
-      discription: "Yes, upon successfully finishing a course, you'll receive a digital certificate which you can showcase on LinkedIn or your resume.",
+      title: "Is there a certificate after course completion?",
+      discription:
+        "Yes, upon successfully finishing a course, you'll receive a digital certificate which you can showcase on LinkedIn or your resume.",
     },
     {
-      title: 'Is job placement support available after completing the course?',
-      discription: "Yes, Kodu provides career guidance, resume-building tips, interview prep, and placement assistance through its network of hiring partners.",
-    }
+      title: "Is job placement support available after completing the course?",
+      discription:
+        "Yes, Kodu provides career guidance, resume-building tips, interview prep, and placement assistance through its network of hiring partners.",
+    },
   ];
 
   const trainers = [
     {
       name: "Shushmita goyal",
       title: "Multipreneur, Founder - Digital Chaabi Brands",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/a.webp',
+      img: "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/a.webp",
     },
     {
       name: "Tammana Rathi",
       title: "Admin, Healthcare & Influencer Marketing Practitioner",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/renu-300x300-1.webp',
+      img: "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/renu-300x300-1.webp",
     },
     {
       name: "Rahul Jhangra",
       title: "Growth Catalyst Brand Marketer",
-      img: 'https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Monu-Saharan-SEO-1-1.webp',
+      img: "https://digitalchaabiacademy.com/wp-content/uploads/2024/07/Monu-Saharan-SEO-1-1.webp",
     },
   ];
 
@@ -119,11 +181,7 @@ function App() {
           <div className="flex flex-col gap-6">
             {/* Logo and Featured Section */}
             <div className="flex items-center gap-4">
-              <img
-                src={Kodu}
-                alt="Logo"
-                className="h-24 w-24"
-              />
+              <img src={Kodu} alt="Logo" className="h-24 w-24" />
               <div>
                 <h1 className="font-bold text-xl">KODU</h1>
                 <h1 className="font-bold text-xl">Code Your Future</h1>
@@ -132,19 +190,19 @@ function App() {
 
             {/* Main Heading */}
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Become a <br />
-              <span className="bg-gradient-to-r from-red-500 via-blue-500 to-green-500 bg-clip-text text-transparent"> High-Paid Full Stack Developer – </span><br />
-               Enroll Now!
+              Become a <br />
+              <span className="bg-gradient-to-r from-red-500 via-blue-500 to-green-500 bg-clip-text text-transparent">
+                {" "}
+                High-Paid Full Stack Developer –{" "}
+              </span>
+              <br />
+              Enroll Now!
             </h1>
 
             {/* Collaboration Section */}
             <div className="flex items-center gap-4">
               <p className="text-lg font-bold">In Collaboration With</p>
-              <img
-                src={Dhurina}
-                alt="SmallLogo"
-                className="h-12"
-              />
+              <img src={Dhurina} alt="SmallLogo" className="h-12" />
             </div>
 
             {/* Main Image */}
@@ -184,23 +242,67 @@ function App() {
 
       {/* Third Section */}
       <section className="py-10 text-center">
-        <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-12"> Why Choose Kodu Institute?</h2>
+        <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-12">
+          {" "}
+          Why Choose Kodu Institute?
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-12 gap-y-8 max-w-6xl mx-auto ml-8 sm:ml-12 lg:ml-50 md:ml-10 md:mr-8 lg:mr-0 justify-center ">
           {[
-            { text: "Learn from Industry Experts & Top Trainers", icon: <Video className="hover:cursor-pointer h-full w-fit m-2"/> },
-            { text: "Work on Live Projects – Gain Real-World Experience", icon: <BookCheck className="hover:cursor-pointer h-full w-fit m-2"/> },
-            { text: "Job Assistance & Interview Preparation", icon: <GraduationCap className="h-full w-fit m-2 hover:cursor-pointer"/> },
-            { text: "Fully AC & WiFi-Enabled Classrooms + Free Lab Access", icon: <Briefcase className="hover:cursor-pointer h-full w-fit m-2"/> },
-            { text: "Personality Development (PD) Sessions to Boost Confidence", icon: <BookA className="hover:cursor-pointer h-full w-fit m-2"/> },
-            { text: "Industry Certificates", icon: <User  className="hover:cursor-pointer h-full w-fit m-2"/> },
-            { text: "3months Internship  from Practical Learnings", icon: <Briefcase  className="hover:cursor-pointer h-full w-fit m-2"/> },
-            { text: "100% Placement Guidance by Seniors ", icon: <BookCheck  className="h-full w-fit m-2 hover:cursor-pointer"/> },
-            { text: "Weekly Practice Test  for Evaluation ", icon: <GraduationCap  className="h-full w-fit m-2 hover:cursor-pointer"/> },
+            {
+              text: "Learn from Industry Experts & Top Trainers",
+              icon: <Video className="hover:cursor-pointer h-full w-fit m-2" />,
+            },
+            {
+              text: "Work on Live Projects – Gain Real-World Experience",
+              icon: (
+                <BookCheck className="hover:cursor-pointer h-full w-fit m-2" />
+              ),
+            },
+            {
+              text: "Job Assistance & Interview Preparation",
+              icon: (
+                <GraduationCap className="h-full w-fit m-2 hover:cursor-pointer" />
+              ),
+            },
+            {
+              text: "Fully AC & WiFi-Enabled Classrooms + Free Lab Access",
+              icon: (
+                <Briefcase className="hover:cursor-pointer h-full w-fit m-2" />
+              ),
+            },
+            {
+              text: "Personality Development (PD) Sessions to Boost Confidence",
+              icon: <BookA className="hover:cursor-pointer h-full w-fit m-2" />,
+            },
+            {
+              text: "Industry Certificates",
+              icon: <User className="hover:cursor-pointer h-full w-fit m-2" />,
+            },
+            {
+              text: "3months Internship  from Practical Learnings",
+              icon: (
+                <Briefcase className="hover:cursor-pointer h-full w-fit m-2" />
+              ),
+            },
+            {
+              text: "100% Placement Guidance by Seniors ",
+              icon: (
+                <BookCheck className="h-full w-fit m-2 hover:cursor-pointer" />
+              ),
+            },
+            {
+              text: "Weekly Practice Test  for Evaluation ",
+              icon: (
+                <GraduationCap className="h-full w-fit m-2 hover:cursor-pointer" />
+              ),
+            },
           ].map((itm, index) => (
             <div key={index} className="flex items-center gap-3  ml-5">
               {/* Icon Placeholder */}
-              <span className="h-10 w-10 bg-blue-500 rounded-full flex items-center justify-center">{itm.icon}</span>
+              <span className="h-10 w-10 bg-blue-500 rounded-full flex items-center justify-center">
+                {itm.icon}
+              </span>
               <p className="font-bold lg:text-lg pt-5 mr-5">{itm.text}</p>
             </div>
           ))}
@@ -279,11 +381,15 @@ function App() {
               "Java",
               "Mobile App Development",
             ].map((itm, idx) => (
-              <Card key={idx} title={itm} buttonText={"Read More"} onClick={() => setShowPopup(true)} />
+              <Card
+                key={idx}
+                title={itm}
+                buttonText={"Read More"}
+                onClick={() => setShowPopup(true)}
+              />
             ))}
           </div>
         </div>
-        
 
         <div className="flex flex-wrap justify-center gap-4 lg:gap-6 mt-12 ml-2 mr-2 lg:ml-0 lg:mr-0">
           {[
@@ -300,15 +406,15 @@ function App() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-10">
-          
-        </div>
+        <div className="flex justify-center mt-10"></div>
       </section>
 
       {/* Sixth Section */}
       <section>
         <div className="flex flex-col items-center ">
-          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">Join this program if you are a →</h2>
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">
+            Join this program if you are a →
+          </h2>
 
           <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2  gap-7 justify-center text-center">
             {[
@@ -338,7 +444,11 @@ function App() {
               },
             ].map((itm, idx) => (
               <div key={idx} className="">
-                <Card title={itm.title} description={itm.description} icon={itm.icons} />
+                <Card
+                  title={itm.title}
+                  description={itm.description}
+                  icon={itm.icons}
+                />
               </div>
             ))}
           </div>
@@ -349,17 +459,15 @@ function App() {
       <section>
         <div className="flex flex-col items-center mt-10 text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 ">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl mb-5 mt-5">
-          Experience Se Seekho, Sirf Theory Se Nahi!  →
+            Experience Se Seekho, Sirf Theory Se Nahi! →
           </h1>
-           <div className="flex mt-8 gap-8 pb-5 w-3xl md:w-full flex-wrap justify-center shadow-gray-700 shadow-lg md:mr-6 pl-3 m-5 pt-3 pr-5 ">
-
-          <ImageSlider images={images} />
-          </div> 
+          <div className="flex mt-8 gap-8 pb-5 w-3xl md:w-full flex-wrap justify-center shadow-gray-700 shadow-lg md:mr-6 pl-3 m-5 pt-3 pr-5 ">
+            <ImageSlider images={images} />
+          </div>
         </div>
       </section>
 
       {/* Eighth Section */}
-      
 
       {/* Ninth Section */}
       <section className="py-10 ">
@@ -372,7 +480,9 @@ function App() {
           {/* Left Side */}
           <div className="flex flex-col items-center text-center gap-6 max-w-sm">
             <div>
-              <h4 className="text-2xl font-bold pt-8 md:pt-8 lg:pt-0">Industry-Driven Projects</h4>
+              <h4 className="text-2xl font-bold pt-8 md:pt-8 lg:pt-0">
+                Industry-Driven Projects
+              </h4>
               <p className="text-gray-300 mt-2 mr-8 ml-5 md:mr-0 md:ml-0">
                 Get hands-on experience through projects sponsored by industry
                 leaders for your career.
@@ -399,7 +509,9 @@ function App() {
           {/* Right Side */}
           <div className="flex flex-col items-center text-center gap-6 max-w-sm">
             <div>
-              <h4 className="text-2xl font-bold mt-19 md:mt-20 lg:mt-0">Internship Opportunities</h4>
+              <h4 className="text-2xl font-bold mt-19 md:mt-20 lg:mt-0">
+                Internship Opportunities
+              </h4>
               <p className="text-gray-300 mt-2 mr-8 ml-5 md:mr-0 md:ml-0">
                 Access strategic internships for career-boosting hands-on
                 experience and professional growth.
@@ -417,12 +529,15 @@ function App() {
 
         <div>
           <div className="flex justify-center mt-28">
-            <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">Our Brands →</h2>
+            <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">
+              Our Brands →
+            </h2>
           </div>
           <div className="flex justify-center gap-7 mt-5 animate-pulse flex-wrap">
-            
-
-            <ImageSlider images={brandImage} className={"h-35 w-50 m-7 shadow-black shadow-lg p-6"}/>
+            <ImageSlider
+              images={brandImage}
+              className={"h-35 w-50 m-7 shadow-black shadow-lg p-6"}
+            />
           </div>
         </div>
       </section>
@@ -445,8 +560,12 @@ function App() {
 
         <div>
           <div className="flex justify-center gap-5 mt-15 flex-wrap">
-
-            <ImageSlider images={PlacementImage} className={'md:h-85 md:w-120 h-35 w-50 m-7 shadow-black shadow-lg p-6'}/>
+            <ImageSlider
+              images={PlacementImage}
+              className={
+                "md:h-85 md:w-120 h-35 w-50 m-7 shadow-black shadow-lg p-6"
+              }
+            />
           </div>
         </div>
       </section>
@@ -454,7 +573,9 @@ function App() {
       {/* Eleventh Section */}
       <section>
         <div className="flex flex-col items-center mb-8 gap-5">
-          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 mt-5 md:text-center">Master 20+ Languages →</h2>
+          <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 mt-5 md:text-center">
+            Master 20+ Languages →
+          </h2>
           <p className="font-semibold mt-5 mb-5">And become a pro Coder... </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-7 mr-5 md:mr-0 ">
@@ -463,7 +584,11 @@ function App() {
                 key={idx}
                 className="bg-gradient-to-r from-gray-600 to-gray-900  shadow-black shadow-lg border border-black flex justify-center items-center rounded-2xl md:w-30 lg:w-35 "
               >
-                <img src={itm} alt="Tools Logo" className="h-15 w-20 lg:h-25 -p-2 lg:w-25 rounded-2xl " />
+                <img
+                  src={itm}
+                  alt="Tools Logo"
+                  className="h-15 w-20 lg:h-25 -p-2 lg:w-25 rounded-2xl "
+                />
               </div>
             ))}
           </div>
@@ -473,24 +598,34 @@ function App() {
       {/* Twelth Section */}
       <section>
         <div className="flex flex-col items-center justify-center h-80 bg-gradient-to-r from-violet-700 to-sky-700 mt-12 rounded-2xl w-screen">
-          <h2 className="font-serif text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-180 lg:w-280 md:ml-0  text-center">Join Kodu Institute & Land Your Dream Tech Job!
-           <p className='mt-3 font-serif'>Register Today!</p></h2>
-          <Button text={'Enquire Now'} className={'text-2xl mt-8 hover:cursor-pointer'} icon={<CheckCircle className="mt-1.5 " />} />
+          <h2 className="font-serif text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-180 lg:w-280 md:ml-0  text-center">
+            Join Kodu Institute & Land Your Dream Tech Job!
+            <p className="mt-3 font-serif">Register Today!</p>
+          </h2>
+          <Button
+            text={"Enquire Now"}
+            className={"text-2xl mt-8 hover:cursor-pointer"}
+            icon={<CheckCircle className="mt-1.5 " />}
+          />
           <p className="font-semibold mt-5">Last 16 Seats Left</p>
         </div>
       </section>
 
       {/* Thirteenth Section */}
       <section>
-        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-5xl mt-12 mb-8">Jo Seekh Chuke Hain, Unhi Se Suno!</h2>
+        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-5xl mt-12 mb-8">
+          Jo Seekh Chuke Hain, Unhi Se Suno!
+        </h2>
         <div className="flex flex-wrap justify-center sm:gap-1 md:gap-3 lg:gap-12 lg:mr-12">
-          {
-            ReviewsArray.map((itm, idx) => (
-              <div key={idx} className="w-full sm:w-1/2 lg:w-1/4 lg:mr-8">
-                <Reviews name={itm.name} description={itm.description} img={itm.img} />
-              </div>
-            ))
-          }
+          {ReviewsArray.map((itm, idx) => (
+            <div key={idx} className="w-full sm:w-1/2 lg:w-1/4 lg:mr-8">
+              <Reviews
+                name={itm.name}
+                description={itm.description}
+                img={itm.img}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -499,15 +634,35 @@ function App() {
         <div className="lg:max-h-fit xl:h-110 h-170 md:h-200 bg-gray-800 shadow-white shadow-[0px_-2px_5px_rgba(34,197,94,0.6)]">
           <div className="flex justify-center mt-7 pt-9 gap-8 flex-wrap">
             <div className="flex flex-col w-122 gap-5 ">
-              <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 pt-12">Get certified with a verifiable certificates →</h2>
-              <p className="font-serif ml-5 md:ml-0">We will also assist you with getting certificates from Google, Meta, Semrush, and more.</p>
+              <h2 className="font-bold text-4xl w-90 ml-5 md:text-5xl md:w-full md:ml-0 pt-12">
+                Get certified with a verifiable certificates →
+              </h2>
+              <p className="font-serif ml-5 md:ml-0">
+                We will also assist you with getting certificates from Google,
+                Meta, Semrush, and more.
+              </p>
               <div className="flex flex-col w-52 items-center gap-5 ml-4">
-                <Button text={'Download Brochure'} onClick={() => setShowPopup(true)} className={'bg-gradient-to-r from-violet-600 to-green-500 text-xl w-68 h-13 flex pt-3 lg:mb-12 ml-18 md:ml-0 hover:cursor-pointer '} icon={<Download className="mr-3" />} />
-                <PopupForm isOpen={showPopup} onClose={() => setShowPopup(false)} />
+                <Button
+                  text={"Download Brochure"}
+                  onClick={() => setShowPopup(true)}
+                  className={
+                    "bg-gradient-to-r from-violet-600 to-green-500 text-xl w-68 h-13 flex pt-3 lg:mb-12 ml-18 md:ml-0 hover:cursor-pointer "
+                  }
+                  icon={<Download className="mr-3" />}
+                />
+                <PopupForm
+                  isOpen={showPopup}
+                  onClose={() => setShowPopup(false)}
+                />
               </div>
             </div>
             <div className="h-50 w-150">
-              <ImageSlider images={certificateImages} className={"h-70 w-90 md:h-90 md:w-130 shadow-black shadow-2xl "}/>
+              <ImageSlider
+                images={certificateImages}
+                className={
+                  "h-70 w-90 md:h-90 md:w-130 shadow-black shadow-2xl "
+                }
+              />
             </div>
           </div>
         </div>
@@ -515,17 +670,19 @@ function App() {
 
       {/* Fifteenth Section */}
       <section>
-        <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 text-center text-slate-100 mt-70 md:mt-8">Learn from top Industry Experts →</h2>
+        <h2 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 text-center text-slate-100 mt-70 md:mt-8">
+          Learn from top Industry Experts →
+        </h2>
         <div className="flex flex-col items-center mt-5">
-          <h4 className="flex gap-5 text-3xl mb-5 mt-1 md:mt-3">Our <p className="text-3xl font-bold">Mentors</p></h4>
+          <h4 className="flex gap-5 text-3xl mb-5 mt-1 md:mt-3">
+            Our <p className="text-3xl font-bold">Mentors</p>
+          </h4>
           <div className="flex flex-wrap justify-center ml-12 md:ml-0 gap-12 lg:gap-15">
-            {
-              mentors.map((itm, idx) => (
-                <div key={idx} className="w-full sm:w-1/2 md:w-1/4">
-                  <MentorCard name={itm.name} title={itm.title} img={itm.img} />
-                </div>
-              ))
-            }
+            {mentors.map((itm, idx) => (
+              <div key={idx} className="w-full sm:w-1/2 md:w-1/4">
+                <MentorCard name={itm.name} title={itm.title} img={itm.img} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -533,23 +690,38 @@ function App() {
       {/* Sixtinth Section */}
       <section>
         <div className="flex flex-col items-center mb-8 gap-5 ">
-          <h1 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">Frequently Asked Questions →</h1>
-          {
-            quesArray.map((itm, idx) => (
-              <div key={idx}>
-                <QuestionCard title={itm.title} discription={itm.discription} />
-              </div>
-            ))
-          }
-          <Button text={'Download Brochure'} onClick={() => setShowPopup(true)} className={'text-xl bg-gradient-to-r from-violet-500 to-blue-600 flex flex-row gap-3 hover:cursor-pointer'} icon={<Download className="mt-0.5" />} />
+          <h1 className="font-bold text-3xl w-90 ml-5 md:text-4xl lg:text-5xl md:w-full md:ml-0 md:text-center">
+            Frequently Asked Questions →
+          </h1>
+          {quesArray.map((itm, idx) => (
+            <div key={idx}>
+              <QuestionCard title={itm.title} discription={itm.discription} />
+            </div>
+          ))}
+          <Button
+            text={"Download Brochure"}
+            onClick={() => setShowPopup(true)}
+            className={
+              "text-xl bg-gradient-to-r from-violet-500 to-blue-600 flex flex-row gap-3 hover:cursor-pointer"
+            }
+            icon={<Download className="mt-0.5" />}
+          />
         </div>
       </section>
 
       {/* Seventeenth Section */}
       <section>
         <div className="flex flex-col items-center bg-gradient-to-r from-violet-600 to-blue-500 h-65 md:h-80 pt-5 md:pt-15">
-          <h2 className="text-center font-bold text-4xl w-90 ml-5 md:text-5xl md:ml-0 mb-8 md:w-180">Start your Coder Success Journey Today</h2>
-          <Button text={'Book My Seat'} className={'text-2xl bg-gradient-to-r from-violet-700 to-blue-700 flex flex-row gap-3 hover:cursor-pointer'} icon={<CheckCircle className="mt-1.5" />} />
+          <h2 className="text-center font-bold text-4xl w-90 ml-5 md:text-5xl md:ml-0 mb-8 md:w-180">
+            Start your Coder Success Journey Today
+          </h2>
+          <Button
+            text={"Book My Seat"}
+            className={
+              "text-2xl bg-gradient-to-r from-violet-700 to-blue-700 flex flex-row gap-3 hover:cursor-pointer"
+            }
+            icon={<CheckCircle className="mt-1.5" />}
+          />
         </div>
       </section>
     </div>
