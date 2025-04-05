@@ -138,7 +138,7 @@ const Form = () => {
         />
         <InputField
           type="select"
-          placeholder="Willing to attend Free course at Hisar?*"
+          placeholder="Want to attend free demo for coding at hisar?*"
           name="willingToAttend"
           value={formData.willingToAttend}
           onChange={(e) => {
