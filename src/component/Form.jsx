@@ -60,7 +60,7 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-gradient-to-t from-gray-400 to-blue-400 p-7 rounded-2xl h-full mb-8 md:mb-0 md:mt-0 ">
+    <div className="bg-gradient-to-t from-#1e293b to-blue-400 p-7 rounded-2xl h-full mb-8 md:mb-0 md:mt-0 ">
       <form
         className="flex flex-col border-2 p-5 gap-3 bg-blue-950 w-full max-w-lg mx-auto text-white"
         onSubmit={handleSubmit}
