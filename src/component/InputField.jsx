@@ -1,16 +1,31 @@
-import React from 'react';
+import React from "react";
 
-const InputField = ({ type, placeholder, value, onChange, options, error,onBlur }) => {
+const InputField = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+  options,
+  error,
+  onBlur,
+  style,
+}) => {
   if (options) {
     return (
       <select
-        className="border-2 rounded-md pl-5 bg-white p-2 text-black w-full"
+        className={`form-select border border-2 rounded px-3 py-2 bg-white text-dark w-100 ${
+          error ? "border-danger" : ""
+        }`}
         value={value}
         onChange={onChange}
       >
-        <option value="" disabled>{placeholder}</option>
+        <option value="" disabled>
+          {placeholder}
+        </option>
         {options.map((opt, index) => (
-          <option key={index} value={opt}>{opt}</option>
+          <option key={index} value={opt}>
+            {opt}
+          </option>
         ))}
       </select>
     );
@@ -18,7 +33,10 @@ const InputField = ({ type, placeholder, value, onChange, options, error,onBlur 
 
   return (
     <input
-      className={`border-2 rounded-md pl-5 bg-white p-2 text-black font-bold w-full ${error ? 'border-red-500' : ''}`}
+      className={`form-control border border-2 rounded px-3 py-2 bg-white text-dark fw-bold w-100 ${
+        error ? "border-danger" : ""
+      }`}
+      style={style}
       type={type}
       placeholder={placeholder}
       value={value}

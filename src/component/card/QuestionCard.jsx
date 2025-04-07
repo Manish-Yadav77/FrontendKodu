@@ -9,20 +9,20 @@ function QuestionCard({ title, discription }) {
   };
 
   return (
-    <div className="flex flex-col items-center bg-white w-90 mr-8 ml-8 pl-9 md:mr-0 md:w-170 lg:w-265 rounded-2xl">
-      <h4 className="text-black font-semibold md:text-lg lg:text-2xl bg-white shadow-2xl text-center pt-3 pl-3 w-full md:w-170 lg:w-full rounded-2xl flex flex-row h-full pb-2 md:pb-0 md:h-16 gap-3 items-center justify-between px-4">
-        {title}
-        <button onClick={toggleDisc} className="ml-auto">
-          <ArrowDownCircle className="mb-1" />
+    <div className="card shadow-lg mb-4 rounded-4">
+      <div className="card-header d-flex align-items-center justify-content-between">
+        <h4 className="mb-0 text-dark">{title}</h4>
+        <button onClick={toggleDisc} className="btn btn-light">
+          <ArrowDownCircle />
         </button>
-      </h4>
-      <p
-        className={`font-serif text-black text-center mt-5 transition-all duration-900 ease-in-out ${
-          disc ? "opacity-500 h-full pb-5 ml-7 mr-7" : "opacity-0 max-h-0"
-        } overflow-hidden`}
+      </div>
+      <div
+        className={`card-body transition-all ${
+          disc ? "d-block" : "d-none"
+        } text-dark`}
       >
-        {discription}
-      </p>
+        <p className="mb-0">{discription}</p>
+      </div>
     </div>
   );
 }
