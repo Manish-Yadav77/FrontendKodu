@@ -42,8 +42,21 @@ import Placement5 from './images/Placement5.png'
 import Placement6 from './images/Placement6.png'
 import Placement7 from './images/Placement7.png'
 import Group1 from './images/Group1.png'
+import banner1 from './Banners/banner1.png'
+import banner2 from './Banners/banner2.png'
+import banner3 from './Banners/banner3.png'
+import banner4 from './Banners/banner4.png'
+import banner5 from './Banners/banner5.png'
+import banner6 from './Banners/banner6.png'
+import banner7 from './Banners/banner7.png'
+import banner8 from './Banners/banner8.png'
+import banner9 from './Banners/banner9.png'
+import event1 from './images/event1.png'
+import event2 from './images/event2.png'
+import event3 from './images/event3.png'
+import main1 from './images/main1.png'
 
 
 
-export {singlTeacher,ManAlone,Dhurina,Kodu,Kodu4,KoduMam,KoduMam2,KoduMamSir,KoduGroup,KoduGroup1,AloneTeacher1,Certificate,AlgoSeeds,ApniKitab,aryavart_Academy,delainelogo,dhurina_logo,kodu_logo,RBDpublisher,C,CPP,java,HTML,React,JS,NodeJS,MongoDB,Python,SQL,St1,St2,St3,RamSir,SeemaMam,DeepanshuSir,Placement1,Placement2,Placement3,Placement4,KoduGroup2,Group1,Placement5,Placement6,Placement7
+export {singlTeacher,ManAlone,Dhurina,Kodu,Kodu4,KoduMam,KoduMam2,KoduMamSir,KoduGroup,KoduGroup1,AloneTeacher1,Certificate,AlgoSeeds,ApniKitab,aryavart_Academy,delainelogo,dhurina_logo,kodu_logo,RBDpublisher,C,CPP,java,HTML,React,JS,NodeJS,MongoDB,Python,SQL,St1,St2,St3,RamSir,SeemaMam,DeepanshuSir,Placement1,Placement2,Placement3,Placement4,KoduGroup2,Group1,Placement5,Placement6,Placement7,banner1,banner2,banner3,banner4,banner5,banner6,banner7,banner8,banner9,event1,event2,event3,main1
 };

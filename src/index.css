@@ -1,0 +1,18 @@
+.position-relative:hover .hover-image {
+    opacity: 1;
+  }
+
+  .btn-close-custom {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #ffffff; /* White color for better visibility */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .btn-close-custom:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    color: #ff4d4d; /* Change color to red on hover */
+  }

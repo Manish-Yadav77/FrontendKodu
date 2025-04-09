@@ -8,9 +8,19 @@ const PopupForm = ({ isOpen, onClose }) => {
     profession: "",
   });
 
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "phone") {
+      const phoneRegex = /^[0-9]{10}$/;
+      setErrors((prev) => ({
+        ...prev,
+        phone: phoneRegex.test(value) ? "" : "Invalid phone number!",
+      }));
+    }
   };
 
   const pdfUrl =
@@ -29,9 +39,16 @@ const PopupForm = ({ isOpen, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (Object.values(errors).some((error) => error)) {
+      alert("Please fix the errors before submitting!");
+      return;
+    }
+
     console.log("Form Data:", formData);
     onClose();
     setFormData({ name: "", phone: "", city: "", profession: "" });
+    window.open(pdfUrl, "_blank");
   };
 
   if (!isOpen) return null;
@@ -54,8 +71,17 @@ const PopupForm = ({ isOpen, onClose }) => {
       >
         <button
           onClick={onClose}
-          className="btn-close position-absolute top-0 end-0 m-2"
-        ></button>
+          className="btn btn-light position-absolute top-0 end-0 m-2"
+          style={{
+            fontSize: "1.5rem",
+            fontWeight: "bold",
+            border: "none",
+            background: "transparent",
+            cursor: "pointer",
+          }}
+        >
+          ❌
+        </button>
         <h2 className="text-center text-dark fw-bold mb-4">
           Join Kodu Institute & Land Your Dream Tech Job!
         </h2>
@@ -75,17 +101,19 @@ const PopupForm = ({ isOpen, onClose }) => {
             placeholder="Phone Number*"
             value={formData.phone}
             onChange={handleChange}
-            className="form-control"
+            className={`form-control ${errors.phone ? "is-invalid" : ""}`}
             required
           />
+          {errors.phone && <div className="text-danger">{errors.phone}</div>}
           <input
             type="text"
             name="city"
             placeholder="City"
             value={formData.city}
             onChange={handleChange}
-            className="form-control"
+            className={`form-control ${errors.city ? "is-invalid" : ""}`}
           />
+          {errors.city && <div className="text-danger">{errors.city}</div>}
           <input
             type="text"
             name="profession"

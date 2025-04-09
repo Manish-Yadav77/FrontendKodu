@@ -75,6 +75,19 @@ import {
   Placement5,
   Placement6,
   Placement7,
+  banner1,
+  banner2,
+  banner3,
+  banner4,
+  banner5,
+  banner6,
+  banner7,
+  banner8,
+  banner9,
+  main1,
+  event1,
+  event2,
+  event3,
 } from "./data/ImgData";
 
 function App() {
@@ -112,9 +125,13 @@ function App() {
     RBDpublisher,
   ];
 
-  const PlacementImage = [Placement7, Placement5, Placement3, Placement6];
+  const PlacementImage = [
+    Placement7, Placement5, Placement3, Placement6,
+  ];
 
-  const images = [singlTeacher, Kodu4, KoduMamSir, KoduGroup];
+  const images = [
+    event3,singlTeacher,event1, Kodu4, KoduMamSir, KoduGroup,
+  ];
 
   const ReviewsArray = [
     {
@@ -138,7 +155,7 @@ function App() {
   const mentors = [
     {
       name: "Ram Mohan ",
-      title: "IIT Kanpur",
+      title: "Web Development Expert (WDE)",
       img: RamSir,
       className: "",
     },
@@ -146,7 +163,7 @@ function App() {
       name: "Seema Mam",
       title: "Sr. coding Expert",
       img: SeemaMam,
-      className: " ",
+      className: "",
     },
     {
       name: "Deepanshu ",
@@ -241,7 +258,7 @@ function App() {
                 style={{ maxWidth: "42rem" }}
               >
                 <img
-                  src={Group1}
+                  src={main1}
                   className="img-fluid rounded"
                   style={{
                     objectFit: "cover",
@@ -470,24 +487,27 @@ function App() {
           {/* Card Grid */}
           <div className="row justify-content-center mt-4 gx-0 gy-1">
             {[
-              "Full Stack Development",
-              "Mern Stack Development",
-              "Introduction to Coding",
-              "WordPress Development",
-              "Data Structures & Algorithms (DSA)",
-              "Become a Chat GPT Pro",
-              "Python",
-              "Java",
-              "Mobile App Development",
+              {title:"Full Stack Development", img:banner1},
+              {title:"Mern Stack Development", img:banner2},
+              {title:"Introduction to Coding", img:banner3},
+              {title:"WordPress Development",  img:banner4},
+              {title:"Data Structures & Algorithms (DSA)",img:banner5},
+              {title:"Become a Chat GPT Pro",img:banner6},
+              {title:"Python",img:banner7},
+              {title:"Java",img:banner8},
+              {title:"Mobile App Development",img:banner9},
             ].map((itm, idx) => (
               <div
                 className="col-12 col-sm-6 col-md-4 d-flex justify-content-center px-1 mb-2"
                 key={idx}
+                style={{ maxWidth: "330px",
+                 }}
               >
                 <Card
-                  title={itm}
+                  title={itm.title}
                   buttonText={"Read More"}
                   onClick={handleSite}
+                  img={itm.img}
                 />
               </div>
             ))}

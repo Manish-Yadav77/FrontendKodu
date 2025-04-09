@@ -1,6 +1,5 @@
 import Button from "../Button";
-
-const Card = ({ title, description, buttonText, className, icon, onClick }) => {
+const Card = ({ title, description, buttonText, className, icon, onClick,img }) => {
   return (
     <div
   className={
@@ -20,7 +19,7 @@ const Card = ({ title, description, buttonText, className, icon, onClick }) => {
     transition: buttonText ? "transform 0.3s ease-in-out" : undefined,
     maxWidth: "280px",
     minHeight: "220px",
-    width: "100%",
+    width: "100%",    
   }}
   onMouseEnter={(e) => {
     if (buttonText) e.currentTarget.style.transform = "scale(1.02)";
@@ -33,6 +32,7 @@ const Card = ({ title, description, buttonText, className, icon, onClick }) => {
   <div className="text-start ms-5 me-3 ms-md-0">
     <h3
       className={
+        img? ``:
         buttonText
           ? "fs-4 fw-bold text-info mb-2"
           : className
@@ -42,6 +42,32 @@ const Card = ({ title, description, buttonText, className, icon, onClick }) => {
     >
       {icon} {title}
     </h3>
+
+  <img
+    src={img}
+    alt="banner"
+    className="hover-image"
+    style={{
+      position: "absolute",
+      top: "0",
+      left: "0",
+      borderRadius: "10px",
+      objectFit: "cover",
+      opacity: "0",
+      transition: "opacity 0.3s ease-in-out",
+    }}
+  />
+  <img src={img} alt="banner" 
+    style={{
+      width: "100%",
+      height: "auto",
+      borderRadius: "10px",
+      marginTop: "10px",
+      display: img ? "block" : "none",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+    }}
+    />
+    
 
     {description && (
       <p
