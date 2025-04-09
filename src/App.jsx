@@ -23,6 +23,7 @@ import {
   Users,
   FileText,
 } from "lucide-react";
+
 import Form from "./component/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PopupForm from "./component/PopupForm";
@@ -32,6 +33,7 @@ import Reviews from "./component/card/Reviews";
 import ImageSlider from "./component/ImageSlider";
 import MentorCard from "./component/card/MentorCard";
 import QuestionCard from "./component/card/QuestionCard";
+
 import {
   singlTeacher,
   Dhurina,
@@ -126,11 +128,11 @@ function App() {
   ];
 
   const PlacementImage = [
-    Placement7, Placement5, Placement3, Placement6,
+    Placement7, Placement5, event1, Placement3, Placement6, event3,
   ];
 
   const images = [
-    event3,singlTeacher,event1, Kodu4, KoduMamSir, KoduGroup,
+    singlTeacher, Kodu4, KoduMamSir, KoduGroup,
   ];
 
   const ReviewsArray = [
