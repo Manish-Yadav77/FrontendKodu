@@ -127,7 +127,7 @@ function App() {
 
   const openWhatsapp = () => {
     window.open(
-      "https://wa.me/919728097234?text=Hi, I'm interested in your services!"
+      "https://wa.me/918950214425?text=Hi, I'm interested in your services!"
     );
   };
 
