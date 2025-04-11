@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowDownCircle } from "lucide-react";
+import { ArrowDownCircle, ChevronDown, ChevronUp } from "lucide-react";
 
 function QuestionCard({ title, discription }) {
   const [disc, setDisc] = useState(false);
@@ -13,7 +13,7 @@ function QuestionCard({ title, discription }) {
       <div className="card-header d-flex align-items-center justify-content-between">
         <h4 className="mb-0 text-dark">{title}</h4>
         <button onClick={toggleDisc} className="btn btn-light">
-          <ArrowDownCircle />
+          {disc ? <ChevronUp/> : <ChevronDown/>}
         </button>
       </div>
       <div

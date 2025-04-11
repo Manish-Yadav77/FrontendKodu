@@ -23,11 +23,14 @@ const Form = () => {
   const validateForm = () => {
     const newErrors = {};
     if (!formData.name) newErrors.name = "Name is required!";
-    if (!formData.email || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) {
+    if (
+      !formData.email ||
+      !/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/i.test(formData.email)
+    ) {
       newErrors.email = "Invalid email format!";
     }
-    if (!formData.mobile || !/^[0-9]{10}$/.test(formData.mobile)) {
-      newErrors.mobile = "Mobile number must be 10 digits!";
+    if (!formData.mobile || !/^[6-9]\d{9}$/.test(formData.mobile)) {
+      newErrors.mobile = "Mobile number must be 10 digits starting with 6-9!";
     }
     if (!formData.city) newErrors.city = "City selection is required!";
     if (!formData.willingToAttend)
@@ -107,9 +110,7 @@ const Form = () => {
             onBlur={() => {
               if (
                 formData.email &&
-                !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-                  formData.email
-                )
+                !/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/i.test(formData.email)
               ) {
                 setErrors((prev) => ({
                   ...prev,
@@ -156,13 +157,10 @@ const Form = () => {
                 }))
               }
               onBlur={() => {
-                if (
-                  formData.mobile &&
-                  !/^[0-9]{10}$/.test(formData.mobile)
-                ) {
+                if (formData.mobile && !/^[6-9]\d{9}$/.test(formData.mobile)) {
                   setErrors((prev) => ({
                     ...prev,
-                    mobile: "Mobile number must be 10 digits!",
+                    mobile: "Mobile number must be 10 digits starting with 6-9!",
                   }));
                 } else {
                   setErrors((prev) => ({ ...prev, mobile: "" }));
@@ -247,7 +245,9 @@ const Form = () => {
             I agree to give my consent to receive updates through SMS/Email &amp;
             WhatsApp*.
           </label>
-          {errors.checked && <p className="text-danger mt-1">{errors.checked}</p>}
+          {errors.checked && (
+            <p className="text-danger mt-1">{errors.checked}</p>
+          )}
         </div>
 
         <button type="submit" className="btn btn-success w-100">

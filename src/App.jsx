@@ -22,6 +22,8 @@ import {
   ClipboardList,
   Users,
   FileText,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 
 import Form from "./component/Form";
@@ -91,6 +93,8 @@ import {
   event2,
   event3,
 } from "./data/ImgData";
+import SeatsLeft from "./component/SeatsLeft";
+import BookMySeatButton from "./component/BookMySeatButton";
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -99,6 +103,12 @@ function App() {
     "https://drive.google.com/file/d/1RC03Qkv2_cTAdXsGvBAz7QiO6jQX_ec2/view?usp=drivesdk";
 
   const certificateImages = [Certificate];
+
+  const openWhatsapp = () => {
+    window.open(
+      "https://wa.me/919728097234?text=Hi, I'm interested in your services!"
+    );
+  };
 
   const handleSite = () => {
     window.open(pdfUrl, "_blank");
@@ -128,12 +138,15 @@ function App() {
   ];
 
   const PlacementImage = [
-    Placement7, Placement5, event1, Placement3, Placement6, event3,
+    Placement7,
+    Placement5,
+    event1,
+    Placement3,
+    Placement6,
+    event3,
   ];
 
-  const images = [
-    singlTeacher, Kodu4, KoduMamSir, KoduGroup,
-  ];
+  const images = [singlTeacher, Kodu4, KoduMamSir, KoduGroup];
 
   const ReviewsArray = [
     {
@@ -489,21 +502,20 @@ function App() {
           {/* Card Grid */}
           <div className="row justify-content-center mt-4 gx-0 gy-1">
             {[
-              {title:"Full Stack Development", img:banner1},
-              {title:"Mern Stack Development", img:banner2},
-              {title:"Introduction to Coding", img:banner3},
-              {title:"WordPress Development",  img:banner4},
-              {title:"Data Structures & Algorithms (DSA)",img:banner5},
-              {title:"Become a Chat GPT Pro",img:banner6},
-              {title:"Python",img:banner7},
-              {title:"Java",img:banner8},
-              {title:"Mobile App Development",img:banner9},
+              { title: "Full Stack Development", img: banner1 },
+              { title: "Mern Stack Development", img: banner2 },
+              { title: "Introduction to Coding", img: banner3 },
+              { title: "WordPress Development", img: banner4 },
+              { title: "Data Structures & Algorithms (DSA)", img: banner5 },
+              { title: "Become a Chat GPT Pro", img: banner6 },
+              { title: "Python", img: banner7 },
+              { title: "Java", img: banner8 },
+              { title: "Mobile App Development", img: banner9 },
             ].map((itm, idx) => (
               <div
                 className="col-12 col-sm-6 col-md-4 d-flex justify-content-center px-1 mb-2"
                 key={idx}
-                style={{ maxWidth: "330px",
-                 }}
+                style={{ maxWidth: "330px" }}
               >
                 <Card
                   title={itm.title}
@@ -890,10 +902,13 @@ function App() {
               text="Enquire Now"
               className="fs-5 bg-light text-dark px-4 py-2 rounded-pill d-flex align-items-center gap-2"
               icon={<CheckCircle className="text-success" />}
+              onClick={openWhatsapp}
             />
           </div>
 
-          <p className="fw-semibold mt-3 text-warning">Last 16 Seats Left</p>
+          <p className="fw-semibold mt-3 text-warning d-flex gap-2">
+            Last <SeatsLeft /> Seats Left
+          </p>
         </div>
       </section>
 
@@ -1028,7 +1043,7 @@ function App() {
         className="py-5 text-white text-center"
         style={{
           background: "linear-gradient(to right, #1e3a8a, #0f172a)",
-          height: "18rem",
+          minHeight: "18rem",
         }}
       >
         <div className="d-flex flex-column align-items-center justify-content-center h-100 px-4">
@@ -1038,11 +1053,13 @@ function App() {
           >
             Start your Coder Success Journey Today
           </h2>
-          <Button
+          {/* <Button
             text="Book My Seat"
             className="btn btn-primary text-white px-4 py-3 rounded-pill d-flex align-items-center gap-2"
             icon={<CheckCircle className="me-2" />}
-          />
+            onClick={<BookMySeatButton/>}
+          /> */}
+          <BookMySeatButton />
         </div>
       </section>
     </div>
