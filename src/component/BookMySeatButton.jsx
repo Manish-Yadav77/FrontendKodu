@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const BookMySeatButton = () => {
+const BookMySeatButton = ({ bookedCount, setBookedCount, resetTrigger }) => {
   const [bookings, setBookings] = useState(3);
   const [recentUser, setRecentUser] = useState(null);
   const [formVisible, setFormVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    contact: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", contact: "" });
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -17,17 +13,14 @@ const BookMySeatButton = () => {
   };
 
   const validate = () => {
-    let newErrors = {};
     const nameRegex = /^[a-zA-Z\s]{3,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^(\+91)?[6-9]\d{9}$/;
+    const newErrors = {};
 
-    if (!nameRegex.test(formData.name))
-      newErrors.name = "Enter a valid name (min 3 letters)";
-    if (!emailRegex.test(formData.email))
-      newErrors.email = "Enter a valid email";
-    if (!phoneRegex.test(formData.contact))
-      newErrors.contact = "Enter a valid 10-digit phone number";
+    if (!nameRegex.test(formData.name)) newErrors.name = "Enter a valid name (min 3 letters)";
+    if (!emailRegex.test(formData.email)) newErrors.email = "Enter a valid email";
+    if (!phoneRegex.test(formData.contact)) newErrors.contact = "Enter a valid 10-digit phone number";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -41,8 +34,19 @@ const BookMySeatButton = () => {
       setFormVisible(false);
       setFormData({ name: "", email: "", contact: "" });
       setErrors({});
+      setBookedCount((prev) => prev + 1); // 🔥 global count updated
     }
   };
+
+  // 🔁 Auto-hide recent user after 4 seconds
+  useEffect(() => {
+    if (recentUser) {
+      const timer = setTimeout(() => {
+        setRecentUser(null);
+      }, 4000); // 4 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [recentUser]);
 
   return (
     <div className="text-center my-5">
@@ -51,7 +55,13 @@ const BookMySeatButton = () => {
           🎯 {bookings} people have already booked their seats!
         </p>
         {recentUser && (
-          <p className="text-info fs-6">
+          <p
+            className="text-info fs-6"
+            style={{
+              opacity: 1,
+              transition: "opacity 1s ease-in-out",
+            }}
+          >
             🚀 <strong>{recentUser}</strong> just booked a seat!
           </p>
         )}
@@ -64,7 +74,6 @@ const BookMySeatButton = () => {
         Book My Seat 🪑
       </button>
 
-      {/* Booking Form */}
       {formVisible && (
         <div className="container mt-4 d-flex justify-content-center">
           <div
@@ -83,9 +92,7 @@ const BookMySeatButton = () => {
                   value={formData.name}
                   onChange={handleChange}
                 />
-                {errors.name && (
-                  <div className="invalid-feedback">{errors.name}</div>
-                )}
+                {errors.name && <div className="invalid-feedback">{errors.name}</div>}
               </div>
 
               <div className="mb-3">
@@ -98,9 +105,7 @@ const BookMySeatButton = () => {
                   value={formData.email}
                   onChange={handleChange}
                 />
-                {errors.email && (
-                  <div className="invalid-feedback">{errors.email}</div>
-                )}
+                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
               </div>
 
               <div className="mb-3">
@@ -113,9 +118,7 @@ const BookMySeatButton = () => {
                   value={formData.contact}
                   onChange={handleChange}
                 />
-                {errors.contact && (
-                  <div className="invalid-feedback">{errors.contact}</div>
-                )}
+                {errors.contact && <div className="invalid-feedback">{errors.contact}</div>}
               </div>
 
               <div className="d-grid">

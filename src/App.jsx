@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Download,
   CheckCircle,
@@ -103,6 +103,27 @@ function App() {
     "https://drive.google.com/file/d/1RC03Qkv2_cTAdXsGvBAz7QiO6jQX_ec2/view?usp=drivesdk";
 
   const certificateImages = [Certificate];
+
+  const [bookedCount, setBookedCount] = useState(0);
+  const [resetTrigger, setResetTrigger] = useState(false);
+
+  useEffect(() => {
+    const launchDate = new Date("2025-04-01T00:00:00");
+    const resetIntervalDays = 30;
+  
+    const interval = setInterval(() => {
+      const now = new Date();
+      const msInDay = 1000 * 60 * 60 * 24;
+      const daysPassed = Math.floor((now - launchDate) / msInDay);
+  
+      if (daysPassed > 0 && daysPassed % resetIntervalDays === 0) {
+        setResetTrigger((prev) => !prev);
+      }
+    }, 60000);
+  
+    return () => clearInterval(interval);
+  }, []);
+  
 
   const openWhatsapp = () => {
     window.open(
@@ -907,7 +928,7 @@ function App() {
           </div>
 
           <p className="fw-semibold mt-3 text-warning d-flex gap-2">
-            Last <SeatsLeft /> Seats Left
+            Last <SeatsLeft bookedCount={bookedCount} resetTrigger={resetTrigger}/> Seats Left
           </p>
         </div>
       </section>
@@ -1053,13 +1074,11 @@ function App() {
           >
             Start your Coder Success Journey Today
           </h2>
-          {/* <Button
-            text="Book My Seat"
-            className="btn btn-primary text-white px-4 py-3 rounded-pill d-flex align-items-center gap-2"
-            icon={<CheckCircle className="me-2" />}
-            onClick={<BookMySeatButton/>}
-          /> */}
-          <BookMySeatButton />
+          <BookMySeatButton
+        bookedCount={bookedCount}
+        setBookedCount={setBookedCount}
+        resetTrigger={resetTrigger}
+      />
         </div>
       </section>
     </div>

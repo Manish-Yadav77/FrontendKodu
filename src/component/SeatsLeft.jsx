@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from "react";
 
-const SeatsLeft = () => {
+const SeatsLeft = ({ bookedCount, resetTrigger }) => {
   const [seats, setSeats] = useState(16);
-  const [delay, setDelay] = useState(getRandomDelay());
-
-  function getRandomDelay() {
-    const delays = [15000, 4 * 60 * 60 * 1000, 24 * 60 * 60 * 1000];
-    return delays[Math.floor(Math.random() * delays.length)];
-  }
+  const resetThreshold = 3;
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    if (bookedCount > 0) {
       setSeats((prev) => {
-        if (prev <= 5) {
-          setDelay(getRandomDelay());
+        const updated = prev - 1;
+        if (updated <= resetThreshold) {
           return 16;
         }
-        return prev - 1;
+        return updated;
       });
-    }, delay);
+    }
+  }, [bookedCount]);
 
-    return () => clearInterval(interval);
-  }, [delay]);
+  useEffect(() => {
+    if (resetTrigger) {
+      setSeats(16);
+    }
+  }, [resetTrigger]);
 
   return (
-    <span className="text-xl font-semibold text-red-600">
-    {seats}
-    </span>
+    <span className="text-xl font-semibold text-red-600">{seats}</span>
   );
 };
 
